@@ -22,13 +22,18 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         textTransform: 'uppercase'
     },
-    setting: {
-        width: 30,
-        height: 30,
+    footer: {
+        width: '100%',
         position: 'absolute',
         bottom: Platform.OS === 'ios' ? 40 : 60,
-        left: 40
-    }
+        paddingHorizontal: 30,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    setting: {
+        width: 30,
+        height: 30
+    },
 })
 
 export default styles
