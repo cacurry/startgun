@@ -18,9 +18,7 @@ import Slider from 'react-native-slider'
 import Setting from '../../../assets/setting.svg'
 import logo from '../../../assets/logo.png'
 import close from '../../../assets/close.png'
-import whistle from '../../../assets/whistle.png'
 import { fields } from '../../utils/settings';
-import voice from '../../../assets/voice.png'
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
 const Main = props => {
@@ -68,7 +66,7 @@ const Main = props => {
                                                         onValueChange={value => {
                                                             setValue(key, value);
                                                         }}
-                                                        onSlidingComplete={()=>{
+                                                        onSlidingComplete={() => {
                                                             setCurrent(-1);
                                                         }}
                                                     />

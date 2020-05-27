@@ -6,44 +6,59 @@
  * @flow strict-local
  */
 
-import React, { useState, useEffect,useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles'
 import {
     View, Text, TouchableHighlight, Image, Platform
 } from 'react-native'
-import { Circle } from 'react-native-svg'
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
-
-import ready from '../../../assets/ready.png'
-import set from '../../../assets/set.png'
-import go from '../../../assets/go.png'
-import hold from '../../../assets/hold.png'
+import hold from '../../../assets/hold.png';
+import go from '../../../assets/go.png';
 import { connect } from 'react-redux';
-import { poll } from '../../utils/common';
 import { play } from '../../utils/audio';
 const Main = props => {
     const { time, random } = props;
-    const [fill, setFill] = useState(0);
-    const [ref,setRef]=useRef();
-    useEffect(() => {
-        setRef(poll(time, setFill));
-    }, []);
-    const progress = 100 * fill / time;
-    const rem = time - fill;
-    useEffect(() => {
-        return;
-        if (rem) {
-            if (rem === time) {
-                play('marks');
-            }
+    const [progress, setProgress] = useState(0);
+    const [isPolling, setPolling] = useState(false);
+    const ref = useRef(null);
+    const startPolling = () => {
+        ref.current = setInterval(() => {
+            setProgress(progress => {
+                if (progress === time) {
+                    return progress;
+                } else {
+                    return progress + 1;
+                }
+            });
+        }, 1000);
+    }
+    const stopPolling = () => {
+        if (ref.current) {
+            clearInterval(ref.current);
+        }
+        ref.current = null;
+    }
+    const togglePolling = () => {
+        if (isPolling) {
+            stopPolling();
         } else {
-            play('go');
+            startPolling();
         }
-    }, [fill]);
-    const stop=()=>{
-        if(ref.current instanceof Function){
-            
-        }
+        setPolling(polling => !polling);
+    }
+    useEffect(() => {
+        togglePolling();
+    }, []);
+    const fill = progress * (100 / time);
+    const remTime = time - progress;
+    let msg = remTime;
+    if (remTime === time) {
+        msg = 'On Your Marks'
+        play('marks');
+    }
+    if (!remTime) {
+        play('go');
+        msg = 'Go';
     }
     return (
         <View style={[styles.countdown]}>
@@ -63,7 +78,7 @@ const Main = props => {
                         size={320}
                         width={20}
                         backgroundWidth={3}
-                        fill={progress}
+                        fill={fill}
                         tintColor="#f1c857"
                         tintColorSecondary="#f1c857"
                         backgroundColor="#404a5b"
@@ -75,7 +90,7 @@ const Main = props => {
                             () => (
                                 <Text style={[styles.fill]}>
                                     {
-                                        rem ? rem === time ? 'on your mark' : rem : 'go'
+                                        msg
                                     }
                                 </Text>
                             )
@@ -85,8 +100,8 @@ const Main = props => {
                         <Image source={go} style={[styles.image]} />
                     </View>
                 </View>
-                <TouchableHighlight style={[styles.button]}>
-                    <Text style={[styles.buttonText]}>Stop</Text>
+                <TouchableHighlight onPress={togglePolling} style={[styles.button]}>
+                    <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : 'Resume'}</Text>
                 </TouchableHighlight>
             </View>
         </View>
