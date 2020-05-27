@@ -22,7 +22,7 @@ import { fields } from '../../utils/settings';
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
 const Main = props => {
-    const { ui, setValue } = props;
+    const { ui, setValue,navigate } = props;
     const {random}=ui;
     const [current, setCurrent] = useState(-1);
     return (
@@ -115,7 +115,11 @@ const Main = props => {
                 </View>
             </View>
             <View style={[styles.footer]}>
-                <TouchableHighlight>
+                <TouchableHighlight
+                    onPress={()=>{
+                        navigate('Start');
+                    }}
+                >
                     <View style={[styles.setting]}>
                         <Setting
                             width={'100%'}

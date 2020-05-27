@@ -16,48 +16,67 @@ import hold from '../../../assets/hold.png';
 import go from '../../../assets/go.png';
 import { connect } from 'react-redux';
 import { play } from '../../utils/audio';
+let interval;
 const Main = props => {
     const { time, random } = props;
     const [progress, setProgress] = useState(0);
     const [isPolling, setPolling] = useState(false);
-    const ref = useRef(null);
+    const [isFinished, setFinish] = useState(false);
     const startPolling = () => {
-        ref.current = setInterval(() => {
+        interval = setInterval(() => {
             setProgress(progress => {
                 if (progress === time) {
+                    setFinish(true);
                     return progress;
-                } else {
-                    return progress + 1;
                 }
+                return progress + 1;
             });
         }, 1000);
     }
     const stopPolling = () => {
-        if (ref.current) {
-            clearInterval(ref.current);
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
         }
-        ref.current = null;
     }
     const togglePolling = () => {
-        if (isPolling) {
-            stopPolling();
-        } else {
-            startPolling();
-        }
-        setPolling(polling => !polling);
+        setPolling(isPolling => !isPolling);
     }
+    const click = () => {
+        if (isFinished) {
+            setFinish(false);
+            setProgress(0);
+        } else {
+            togglePolling();
+        }
+    };
+    useEffect(() => {
+        if (isPolling) {
+            startPolling();
+        } else {
+            stopPolling();
+        }
+    }, [isPolling]);
+    useEffect(() => {
+        if (isFinished) {
+            togglePolling();
+        }
+    }, [isFinished]);
     useEffect(() => {
         togglePolling();
+        return () => {
+            interval = null;
+        }
     }, []);
     const fill = progress * (100 / time);
     const remTime = time - progress;
     let msg = remTime;
     if (remTime === time) {
         msg = 'On Your Marks'
-        play('marks');
+        //play('marks');
     }
     if (!remTime) {
-        play('go');
+        //play('go');
         msg = 'Go';
     }
     return (
@@ -100,8 +119,8 @@ const Main = props => {
                         <Image source={go} style={[styles.image]} />
                     </View>
                 </View>
-                <TouchableHighlight onPress={togglePolling} style={[styles.button]}>
-                    <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : 'Resume'}</Text>
+                <TouchableHighlight onPress={click} style={[styles.button]}>
+                    <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : isFinished ? 'Reset' : 'Resume'}</Text>
                 </TouchableHighlight>
             </View>
         </View>
