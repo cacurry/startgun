@@ -23,6 +23,7 @@ import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
 const Main = props => {
     const { ui, setValue } = props;
+    const {random}=ui;
     const [current, setCurrent] = useState(-1);
     return (
         <View style={[styles.settings]}>
@@ -41,7 +42,7 @@ const Main = props => {
                             const { title, key, type, min, max, options } = field;
                             if (type === 'slider') {
                                 return (
-                                    <View styles={[styles.action]} key={index}>
+                                    <View style={[styles.action]} key={index}>
                                         <Text style={[styles.label]}>{title}</Text>
                                         <TouchableHighlight onPress={() => {
                                             if (current !== index) {
@@ -54,7 +55,7 @@ const Main = props => {
                                         </TouchableHighlight>
                                         {
                                             current === index ?
-                                                <View styles={[styles.slider]}>
+                                                <View style={[styles.slider]}>
                                                     <Slider
                                                         minimumValue={min}
                                                         maximumValue={max}
@@ -72,9 +73,9 @@ const Main = props => {
                                                     />
                                                 </View> :
                                                 <TouchableHighlight onPress={() => {
-                                                    setValue('random', true);
+                                                    setValue('random', !random);
                                                 }}>
-                                                    <View style={[styles.button, styles.yellowBtn]}>
+                                                    <View style={[styles.button, random&&styles.yellowBtn]}>
                                                         <Text style={[styles.buttonText]}>Random</Text>
                                                     </View>
                                                 </TouchableHighlight>
@@ -84,7 +85,7 @@ const Main = props => {
                             }
                             if (type === 'select') {
                                 return (
-                                    <View key={index} styles={[styles.action]}>
+                                    <View key={index} style={[styles.action]}>
                                         <Text style={[styles.label]}>{title}</Text>
                                         {
                                             options.map((option, index) => {
