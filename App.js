@@ -25,7 +25,7 @@ const screens = {
 const Navigator = props => {
   const [routes, setRoutes] = useState(['Splash']);
   useEffect(() => {
-    const backHandler = BackHandler.addEventListener(() => {
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
       back();
       return true;
     });
@@ -35,10 +35,11 @@ const Navigator = props => {
   }, []);
   const back = function () {
     setRoutes(routes => {
-      if (routes.length) {
-        routes.pop();
+      let newRoutes = JSON.parse(JSON.stringify(routes));
+      if (newRoutes.length) {
+        newRoutes.pop();
       }
-      return routes;
+      return newRoutes;
     });
   }
   const navigate = current => {

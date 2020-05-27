@@ -13,19 +13,21 @@ import {
     Text,
     TouchableHighlight
 } from 'react-native'
-import { connect } from 'react-redux';
-import { ActionNames } from '../../redux/actions';
+import { connect } from 'react-redux'
+import { ActionNames } from '../../redux/actions'
 import Start from '../../../assets/start.svg'
 import Setting from '../../../assets/setting.svg'
-import { } from '../../utils/audio';
+import RNPickerSelect from 'react-native-picker-select'
+import {} from '../../utils/audio'
+
 const Main = props => {
-    const { navigate, time, setTime } = props;
+    const {navigate, time, setTime} = props
     return (
         <View style={[styles.start]}>
             <View style={[styles.content]}>
                 <TouchableHighlight
                     onPress={() => {
-                        navigate('CountDown');
+                        navigate('CountDown')
                     }}
                 >
                     <View style={[styles.startTrigger]}>
@@ -35,22 +37,28 @@ const Main = props => {
                         />
                     </View>
                 </TouchableHighlight>
-                <TouchableHighlight>
+                <RNPickerSelect
+                    onValueChange={setTime}
+                    items={Array(10).fill().map((x,i)=>{
+                        const sec=i+5;
+                        return {
+                            label:sec+' seconds',
+                            value:sec
+                        }
+                    })}
+                >
                     <View style={[styles.values]}>
                         <Text style={[styles.text]}>{time.toFixed(2)}</Text>
                         <Text style={[styles.text]}>Tap to Change</Text>
                     </View>
-                </TouchableHighlight>
+                    </RNPickerSelect>
             </View>
             <View style={[styles.footer]}>
                 <TouchableHighlight onPress={() => {
-                    console.log('Settings pressed');
+                    navigate('Settings');
                 }}>
                     <View style={[styles.setting]}>
                         <Setting
-                            onPress={() => {
-                                console.log('on pressed');
-                            }}
                             width={'100%'}
                             height={'100%'}
                         />
@@ -60,8 +68,8 @@ const Main = props => {
         </View>
     )
 }
-const mapStateToProps = ({ ui }) => {
-    const { time } = ui;
+const mapStateToProps = ({ui}) => {
+    const {time} = ui
     return {
         time
     }
