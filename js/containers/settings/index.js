@@ -48,8 +48,6 @@ const Main = props => {
                                         <TouchableHighlight onPress={() => {
                                             if (current !== index) {
                                                 setCurrent(index);
-                                            } else {
-                                                setCurrent(-1);
                                             }
                                         }}>
                                             <View style={[styles.button]}>
@@ -70,10 +68,13 @@ const Main = props => {
                                                         onValueChange={value => {
                                                             setValue(key, value);
                                                         }}
+                                                        onSlidingComplete={()=>{
+                                                            setCurrent(-1);
+                                                        }}
                                                     />
                                                 </View> :
                                                 <TouchableHighlight onPress={() => {
-                                                    // on random call
+                                                    setValue('random', true);
                                                 }}>
                                                     <View style={[styles.button, styles.yellowBtn]}>
                                                         <Text style={[styles.buttonText]}>Random</Text>

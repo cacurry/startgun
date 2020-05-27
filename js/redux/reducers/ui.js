@@ -22,6 +22,5 @@ export default function (state = {}, action) {
         }
     }
     saveData(newState).catch(console.log);
-    console.log({newState});
     return newState;
 }

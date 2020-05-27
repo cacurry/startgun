@@ -7,10 +7,12 @@ export function poll(time, cb) {
     let i = 0;
     const interval = setInterval(() => {
         i = i + 1;
+        cb(i);
         if (i === time) {
             clearInterval(interval);
-        } else {
-            cb(i);
         }
     }, 1000);
+    return () => {
+        clearInterval(interval);
+    }
 }

@@ -13,16 +13,21 @@ import {
     Text,
     TouchableHighlight
 } from 'react-native'
-
+import { connect } from 'react-redux';
+import { ActionNames } from '../../redux/actions';
 import Start from '../../../assets/start.svg'
 import Setting from '../../../assets/setting.svg'
 import { } from '../../utils/audio';
 const Main = props => {
-    const { navigate } = props;
+    const { navigate, time, setTime } = props;
     return (
         <View style={[styles.start]}>
             <View style={[styles.content]}>
-                <TouchableHighlight>
+                <TouchableHighlight
+                    onPress={() => {
+                        navigate('CountDown');
+                    }}
+                >
                     <View style={[styles.startTrigger]}>
                         <Start
                             width={'100%'}
@@ -32,7 +37,7 @@ const Main = props => {
                 </TouchableHighlight>
                 <TouchableHighlight>
                     <View style={[styles.values]}>
-                        <Text style={[styles.text]}>5.00</Text>
+                        <Text style={[styles.text]}>{time.toFixed(2)}</Text>
                         <Text style={[styles.text]}>Tap to Change</Text>
                     </View>
                 </TouchableHighlight>
@@ -43,7 +48,7 @@ const Main = props => {
                 }}>
                     <View style={[styles.setting]}>
                         <Setting
-                            onPress={()=>{
+                            onPress={() => {
                                 console.log('on pressed');
                             }}
                             width={'100%'}
@@ -55,5 +60,23 @@ const Main = props => {
         </View>
     )
 }
-
-export default Main
+const mapStateToProps = ({ ui }) => {
+    const { time } = ui;
+    return {
+        time
+    }
+}
+const bindAction = dispatch => {
+    return {
+        setTime: value => {
+            return dispatch({
+                type: ActionNames.SET_UI_PROPERTY,
+                payload: {
+                    name: 'time',
+                    value
+                }
+            })
+        }
+    }
+}
+export default connect(mapStateToProps, bindAction)(Main)
