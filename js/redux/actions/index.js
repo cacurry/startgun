@@ -1,0 +1,5 @@
+export const ActionNames={
+    SET_UI_PROPERTY:"SET_UI_PROPERTY",
+    DELETE_UI_PROPERTY:"DELETE_UI_PROPERTY",
+    SET_UI_DATA:"SET_UI_DATA"
+};

@@ -6,12 +6,22 @@
  * @flow strict-local
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './styles'
 import { View } from 'react-native'
 import SplashSVG from '../../../assets/splash.svg'
-
-const Main = ({}) => {
+import { connect } from 'react-redux';
+import { ActionNames } from '../../redux/actions';
+import { getData } from '../../utils/storage';
+const Main = props => {
+    const { setReducer, navigate } = props;
+    const setData = async () => {
+        setReducer(await getData());
+        navigate('Start');
+    }
+    useEffect(() => {
+        setData();
+    }, []);
     return (
         <View style={[styles.splash]}>
             <View style={[styles.content]}>
@@ -24,5 +34,19 @@ const Main = ({}) => {
         </View>
     )
 }
+const mapStateToProps = ({ }) => {
+    return {
 
-export default Main
+    }
+}
+const bindAction = dispatch => {
+    return {
+        setReducer: payload => {
+            return dispatch({
+                type: ActionNames.SET_UI_DATA,
+                payload
+            })
+        }
+    }
+}
+export default connect(mapStateToProps, bindAction)(Main);

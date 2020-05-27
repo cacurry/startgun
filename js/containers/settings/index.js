@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles'
 import {
     View,
@@ -19,91 +19,99 @@ import Setting from '../../../assets/setting.svg'
 import logo from '../../../assets/logo.png'
 import close from '../../../assets/close.png'
 import whistle from '../../../assets/whistle.png'
-import random from '../../../assets/random.png'
+import { fields } from '../../utils/settings';
 import voice from '../../../assets/voice.png'
-
-const Main = ({}) => {
+import { connect } from 'react-redux';
+import { ActionNames } from '../../redux/actions';
+const Main = props => {
+    const { ui, setValue } = props;
+    const [current, setCurrent] = useState(-1);
     return (
         <View style={[styles.settings]}>
             <View style={[styles.content]}>
                 <TouchableHighlight style={[styles.close]}>
-                    <Image source={close} style={[styles.closeIcon]}/>
+                    <Image source={close} style={[styles.closeIcon]} />
                 </TouchableHighlight>
                 <View style={[styles.logo]}>
-                    <Image source={logo}/>
+                    <Image source={logo} />
                 </View>
                 <Text style={[styles.welcome]}>Welcome to Startgun!</Text>
                 <Text style={[styles.text]}>Startgun helps you train like pro.</Text>
                 <View style={[styles.actions]}>
-                    {/*<View style={[styles.action]}>
-                        <Text style={[styles.label]}>Hold Time</Text>
-                        <TouchableHighlight>
-                            <View style={[styles.button]}>
-                                <Text style={[styles.buttonText]}>Set</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <TouchableHighlight>
-                            <View style={[styles.button, styles.yellowBtn]}>
-                                <Text style={[styles.buttonText]}>Random <Image source={random} style={[styles.icon]}/></Text>
-                            </View>
-                        </TouchableHighlight>
-                    </View>*/}
-                    <View style={[styles.action]}>
-                        <Text style={[styles.label]}>Hold Time</Text>
-                        <TouchableHighlight>
-                            <View style={[styles.button]}>
-                                <Text style={[styles.buttonText]}>.75 sec</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <View style={[styles.slider]}>
-                            <Slider
-                                minimumValue={0.5}
-                                maximumValue={2.5}
-                                minimumTrackTintColor={'#fff'}
-                                maximumTrackTintColor={'#fff'}
-                                thumbTintColor={'#706c4c'}
-                                thumbStyle={{borderWidth: 3, borderColor: '#f2c957'}}
-                                value={1}
-                            />
-                            <View style={[styles.ranges]}>
-                                <View style={[styles.range]}>
-                                    <Text style={[styles.time]}>0.5</Text>
-                                    <Text style={[styles.unit]}>sec</Text>
-                                </View>
-                                <View style={[styles.range]}>
-                                    <Text style={[styles.time]}>2.0</Text>
-                                    <Text style={[styles.unit]}>sec</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={[styles.action]}>
-                        <Text style={[styles.label]}>Event</Text>
-                        <TouchableHighlight>
-                            <View style={[styles.button]}>
-                                <Text style={[styles.buttonText]}>Distance</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <TouchableHighlight>
-                            <View style={[styles.button, styles.yellowBtn]}>
-                                <Text style={[styles.buttonText]}>Sprints</Text>
-                            </View>
-                        </TouchableHighlight>
-                    </View>
-                    <View style={[styles.action]}>
-                        <Text style={[styles.label]}>Sound</Text>
-                        <TouchableHighlight>
-                            <View style={[styles.button]}>
-                                <Text style={[styles.buttonText]}>Whistle <Image source={whistle}/></Text>
-                            </View>
-                        </TouchableHighlight>
-                        <TouchableHighlight>
-                            <View style={[styles.button, styles.yellowBtn]}>
-                                <Text style={[styles.buttonText]}>Voice <Image source={voice}
-                                                                               style={[styles.icon]}/></Text>
-                            </View>
-                        </TouchableHighlight>
-                    </View>
+                    {
+                        fields.map((field, index) => {
+                            const { title, key, type, min, max, options } = field;
+                            if (type === 'slider') {
+                                return (
+                                    <View styles={[styles.action]} key={index}>
+                                        <Text style={[styles.label]}>{title}</Text>
+                                        <TouchableHighlight onPress={() => {
+                                            if (current !== index) {
+                                                setCurrent(index);
+                                            } else {
+                                                setCurrent(-1);
+                                            }
+                                        }}>
+                                            <View style={[styles.button]}>
+                                                <Text style={[styles.buttonText]}>{current === index ? ui[key].toFixed(2) : 'Set'}</Text>
+                                            </View>
+                                        </TouchableHighlight>
+                                        {
+                                            current === index ?
+                                                <View styles={[styles.slider]}>
+                                                    <Slider
+                                                        minimumValue={min}
+                                                        maximumValue={max}
+                                                        minimumTrackTintColor={'#fff'}
+                                                        maximumTrackTintColor={'#fff'}
+                                                        thumbTintColor={'#706c4c'}
+                                                        thumbStyle={{ borderWidth: 3, borderColor: '#f2c957' }}
+                                                        value={0.75}
+                                                        onValueChange={value => {
+                                                            setValue(key, value);
+                                                        }}
+                                                    />
+                                                </View> :
+                                                <TouchableHighlight onPress={() => {
+                                                    // on random call
+                                                }}>
+                                                    <View style={[styles.button, styles.yellowBtn]}>
+                                                        <Text style={[styles.buttonText]}>Random</Text>
+                                                    </View>
+                                                </TouchableHighlight>
+                                        }
+                                    </View>
+                                )
+                            }
+                            if (type === 'select') {
+                                return (
+                                    <View key={index} styles={[styles.action]}>
+                                        <Text style={[styles.label]}>{title}</Text>
+                                        {
+                                            options.map((option, index) => {
+                                                const { title, image } = option;
+                                                return (
+                                                    <TouchableHighlight key={index} onPress={() => {
+                                                        setValue(key, title);
+                                                    }}>
+                                                        <View style={[styles.button, ui[key] === title && styles.yellowBtn]}>
+                                                            <Text style={[styles.buttonText]}>{title}
+                                                                {
+                                                                    image &&
+                                                                    <Image source={image}
+                                                                        style={[styles.icon]} />
+                                                                }
+                                                            </Text>
+                                                        </View>
+                                                    </TouchableHighlight>
+                                                )
+                                            })
+                                        }
+                                    </View>
+                                )
+                            }
+                        })
+                    }
                 </View>
             </View>
             <View style={[styles.footer]}>
@@ -120,5 +128,22 @@ const Main = ({}) => {
         </View>
     )
 }
-
-export default Main
+const mapStateToProps = ({ ui }) => {
+    return {
+        ui
+    }
+}
+const bindAction = dispatch => {
+    return {
+        setValue: (name, value) => {
+            return dispatch({
+                type: ActionNames.SET_UI_PROPERTY,
+                payload: {
+                    name,
+                    value
+                }
+            })
+        }
+    }
+}
+export default connect(mapStateToProps, bindAction)(Main);
