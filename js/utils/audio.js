@@ -2,7 +2,8 @@ import Sound from 'react-native-sound';
 const audios = {
     marks: 'marks.wav',
     set: 'set.wav',
-    go: 'go.mp3'
+    go: 'go.mp3',
+    whistle:'whistle.mp3'
 };
 Sound.setCategory('Playback');
 export async function play(audio) {

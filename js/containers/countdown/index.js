@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles'
 import {
     View, Text, TouchableHighlight, Image, Platform
@@ -15,11 +15,11 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import hold from '../../../assets/hold.png';
 import go from '../../../assets/go.png';
 import { connect } from 'react-redux';
-import {delay} from '../../utils/common';
+import { delay } from '../../utils/common';
 import { play } from '../../utils/audio';
 let interval;
 const Main = props => {
-    const { time, random, holdTime } = props;
+    const { time, random, holdTime, event, sound } = props;
     const [progress, setProgress] = useState(0);
     const [isPolling, setPolling] = useState(false);
     const [isFinished, setFinish] = useState(false);
@@ -27,8 +27,12 @@ const Main = props => {
         interval = setInterval(() => {
             setProgress(progress => {
                 if (progress === time) {
-                    delay(holdTime).then(()=>{
-                        play('go');
+                    delay(holdTime).then(() => {
+                        if (event === 'Whistle') {
+                            play('whistle');
+                        } else {
+                            play('go');
+                        }
                         setFinish(true);
                     });
                 }
@@ -68,7 +72,10 @@ const Main = props => {
     useEffect(() => {
         togglePolling();
         return () => {
-            interval = null;
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
         }
     }, []);
     const fill = progress * (100 / time);
@@ -82,7 +89,7 @@ const Main = props => {
         msg = 'Get Set';
         play('set');
     }
-    if (remTime<0) {
+    if (remTime < 0) {
         msg = 'Go';
     }
     return (
@@ -133,11 +140,13 @@ const Main = props => {
     )
 }
 const mapStateToProps = ({ ui }) => {
-    const { time, random, holdTime } = ui;
+    const { time, random, holdTime, event, sound } = ui;
     return {
         time,
         random,
-        holdTime
+        holdTime,
+        event,
+        sound
     }
 }
 export default connect(mapStateToProps)(Main)
