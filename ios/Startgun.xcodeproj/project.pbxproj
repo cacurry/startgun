@@ -46,10 +46,10 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* ArivaaMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArivaaMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* StartgunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartgunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ArivaaMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArivaaMobileTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* ArivaaMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArivaaMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Startgun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Startgun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ArivaaMobile/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ArivaaMobile/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -62,8 +62,8 @@
 		16841D1F247FC2A2007D800B /* set.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = set.wav; path = ../android/app/src/main/res/raw/set.wav; sourceTree = "<group>"; };
 		1BDE5942112DA7E20DE950A2 /* libPods-ArivaaMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DFCEBCEDC0996A3BE4186E /* Pods-ArivaaMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-tvOSTests/Pods-ArivaaMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* ArivaaMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArivaaMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* ArivaaMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ArivaaMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* Startgun-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Startgun-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* Startgun-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Startgun-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF9098826AB26ACFA145BD5 /* Pods-ArivaaMobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-tvOS/Pods-ArivaaMobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		3A8B4C834492ECE69164EACB /* libPods-ArivaaMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5231EEAF4D1DD174557082DD /* libPods-ArivaaMobile-ArivaaMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-ArivaaMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,10 +220,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* ArivaaMobile.app */,
-				00E356EE1AD99517003FC87E /* ArivaaMobileTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* ArivaaMobile-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* ArivaaMobile-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Startgun.app */,
+				00E356EE1AD99517003FC87E /* StartgunTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* Startgun-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* Startgun-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,9 +231,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ArivaaMobileTests */ = {
+		00E356ED1AD99517003FC87E /* StartgunTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ArivaaMobileTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "StartgunTests" */;
 			buildPhases = (
 				474DDA72A660EAD5EF40EEA0 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -245,14 +245,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ArivaaMobileTests;
+			name = StartgunTests;
 			productName = ArivaaMobileTests;
-			productReference = 00E356EE1AD99517003FC87E /* ArivaaMobileTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* StartgunTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* ArivaaMobile */ = {
+		13B07F861A680F5B00A75B9A /* Startgun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ArivaaMobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Startgun" */;
 			buildPhases = (
 				CA769793899CF4F7244EBDDE /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -265,14 +265,14 @@
 			);
 			dependencies = (
 			);
-			name = ArivaaMobile;
+			name = Startgun;
 			productName = ArivaaMobile;
-			productReference = 13B07F961A680F5B00A75B9A /* ArivaaMobile.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Startgun.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* ArivaaMobile-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* Startgun-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ArivaaMobile-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Startgun-tvOS" */;
 			buildPhases = (
 				00CD4EF73631D0776C41360E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -285,14 +285,14 @@
 			);
 			dependencies = (
 			);
-			name = "ArivaaMobile-tvOS";
+			name = "Startgun-tvOS";
 			productName = "ArivaaMobile-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* ArivaaMobile-tvOS.app */;
+			productReference = 2D02E47B1E0B4A5D006451C7 /* Startgun-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* ArivaaMobile-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* Startgun-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ArivaaMobile-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Startgun-tvOSTests" */;
 			buildPhases = (
 				BCF8C57971AAF5E78C3EB544 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -304,9 +304,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "ArivaaMobile-tvOSTests";
+			name = "Startgun-tvOSTests";
 			productName = "ArivaaMobile-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* ArivaaMobile-tvOSTests.xctest */;
+			productReference = 2D02E4901E0B4A5D006451C7 /* Startgun-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -323,6 +323,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -335,7 +336,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ArivaaMobile" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Startgun" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -348,10 +349,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ArivaaMobile */,
-				00E356ED1AD99517003FC87E /* ArivaaMobileTests */,
-				2D02E47A1E0B4A5D006451C7 /* ArivaaMobile-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* ArivaaMobile-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* Startgun */,
+				00E356ED1AD99517003FC87E /* StartgunTests */,
+				2D02E47A1E0B4A5D006451C7 /* Startgun-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* Startgun-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -592,12 +593,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ArivaaMobile */;
+			target = 13B07F861A680F5B00A75B9A /* Startgun */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* ArivaaMobile-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* Startgun-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -634,7 +635,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArivaaMobile.app/ArivaaMobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Startgun.app/Startgun";
 			};
 			name = Debug;
 		};
@@ -654,7 +655,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArivaaMobile.app/ArivaaMobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Startgun.app/Startgun";
 			};
 			name = Release;
 		};
@@ -664,7 +665,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -677,8 +680,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ArivaaMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.start.gun;
+				PRODUCT_NAME = Startgun;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -691,7 +695,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ArivaaMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -699,8 +705,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ArivaaMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.start.gun;
+				PRODUCT_NAME = Startgun;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -784,7 +791,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ArivaaMobile-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArivaaMobile-tvOS.app/ArivaaMobile-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Startgun-tvOS.app/Startgun-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
@@ -811,7 +818,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ArivaaMobile-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArivaaMobile-tvOS.app/ArivaaMobile-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Startgun-tvOS.app/Startgun-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -932,7 +939,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ArivaaMobileTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "StartgunTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -941,7 +948,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ArivaaMobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Startgun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -950,7 +957,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ArivaaMobile-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Startgun-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -959,7 +966,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ArivaaMobile-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Startgun-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -968,7 +975,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ArivaaMobile" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Startgun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ArivaaMobile.app"
-               BlueprintName = "ArivaaMobile"
-               ReferencedContainer = "container:ArivaaMobile.xcodeproj">
+               BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
+               BuildableName = "Startgun-tvOS.app"
+               BlueprintName = "Startgun-tvOS"
+               ReferencedContainer = "container:Startgun.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ArivaaMobileTests.xctest"
-               BlueprintName = "ArivaaMobileTests"
-               ReferencedContainer = "container:ArivaaMobile.xcodeproj">
+               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
+               BuildableName = "Startgun-tvOSTests.xctest"
+               BlueprintName = "Startgun-tvOSTests"
+               ReferencedContainer = "container:Startgun.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,10 +54,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ArivaaMobile.app"
-            BlueprintName = "ArivaaMobile"
-            ReferencedContainer = "container:ArivaaMobile.xcodeproj">
+            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
+            BuildableName = "Startgun-tvOS.app"
+            BlueprintName = "Startgun-tvOS"
+            ReferencedContainer = "container:Startgun.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,10 +71,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ArivaaMobile.app"
-            BlueprintName = "ArivaaMobile"
-            ReferencedContainer = "container:ArivaaMobile.xcodeproj">
+            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
+            BuildableName = "Startgun-tvOS.app"
+            BlueprintName = "Startgun-tvOS"
+            ReferencedContainer = "container:Startgun.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

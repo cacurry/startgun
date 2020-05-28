@@ -14,7 +14,7 @@
     "clean": "rm -rf node_modules package-lock.json yarn.lock && yarn",
     "rename": "PACKAGE_NAME=$(cat package.json | grep androidPackage | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && APP_NAME=$(cat package.json | grep appName | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && node automation/libs/react-native-rename/lib/index.js \"$APP_NAME\" -b $PACKAGE_NAME",
     "generate-icon": "react-native set-icon --path icon.png",
-    "generate-splash": "react-native --platform  set-splash --path splash.png --resize cover",
+    "generate-splash": "react-native set-splash --path splash.png --resize cover",
     "android-release": "cd android && ./gradlew assembleRelease && open app/build/outputs/apk/release && cd ..",
     "android-clean": "cd android && ./gradlew clean && cd ..",
     "ios-clean": "cd ios && rm -rf Podfile.lock & rm -rf Pods && pod install && cd ..",
