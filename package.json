@@ -12,7 +12,7 @@
     "test": "jest",
     "lint": "eslint .",
     "clean": "rm -rf node_modules package-lock.json yarn.lock && yarn",
-    "rename": "PACKAGE_NAME=$(cat package.json | grep androidPackage | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && APP_NAME=$(cat package.json | grep appName | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && node automation/libs/rename/index.js \"$APP_NAME\" -b $PACKAGE_NAME",
+    "rename": "PACKAGE_NAME=$(cat package.json | grep androidPackage | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && APP_NAME=$(cat package.json | grep appName | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && babel-node --presets @babel/preset-env -- automation/libs/react-native-rename/src/index.js \"$APP_NAME\" -b $PACKAGE_NAME",
     "generate-icon": "react-native set-icon --path icon.png",
     "generate-splash": "react-native set-splash --path splash.png --resize cover",
     "android-release": "cd android && ./gradlew assembleRelease && open app/build/outputs/apk/release && cd ..",
@@ -34,6 +34,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
     "@babel/runtime": "^7.9.6",
     "@bam.tech/react-native-make": "^3.0.0",
     "@react-native-community/eslint-config": "^1.1.0",
@@ -42,7 +44,8 @@
     "jest": "^26.0.1",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-native-svg-transformer": "^0.14.3",
-    "react-test-renderer": "16.11.0"
+    "react-test-renderer": "16.11.0",
+    "react-native-rename": "./automation/libs/react-native-rename"
   },
   "jest": {
     "preset": "react-native"
