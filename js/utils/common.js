@@ -6,4 +6,3 @@ export async function delay(time){
 export function getRandomTime(){
     return 1.5*Math.random()+0.5;
 }
-console.log(getRandomTime());

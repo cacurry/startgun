@@ -31,7 +31,6 @@ const Main = props => {
                         play('go');
                         setFinish(true);
                     });
-                    return progress+1;
                 }
                 return progress + 1;
             });
