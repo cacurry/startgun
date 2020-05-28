@@ -16,7 +16,7 @@ import { getData,clearData } from '../../utils/storage';
 const Main = props => {
     const { setReducer, navigate } = props;
     const setData = async () => {
-        await clearData();
+        //await clearData();
         setReducer(await getData());
         navigate('Start');
     }
