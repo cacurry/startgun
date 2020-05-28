@@ -1,10 +1,10 @@
 {
-  "name": "ArivaaMobile",
+  "name": "Startgun",
   "version": "0.0.1",
   "private": true,
-  "appName": "Arivaa Mobile1",
-  "androidPackage": "com.arivaamobile1",
-  "iosBundleId": "com.arivaamobile",
+  "appName": "Startgun",
+  "androidPackage": "com.start.gun",
+  "iosBundleId": "com.start.gun",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
