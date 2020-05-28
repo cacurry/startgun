@@ -14,7 +14,7 @@ import path from 'path';
 import { foldersAndFiles } from './config/foldersAndFiles';
 import { filesToModifyContent } from './config/filesToModifyContent';
 import { bundleIdentifiers } from './config/bundleIdentifiers';
-import pattern from './config/pattern'
+import pattern from './config/pattern';
 const devTestRNProject = ''; // For Development eg '/Users/junedomingo/Desktop/RN49'
 const __dirname = devTestRNProject || process.cwd();
 const projectName = pjson.name;
@@ -69,7 +69,7 @@ const cleanBuilds = () => {
 };
 
 readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
-  .then(data => {
+  .then((data) => {
     const $ = cheerio.load(data);
     const currentAppName = $('string[name=app_name]').text();
     const nS_CurrentAppName = currentAppName.replace(/\s/g, '');
@@ -79,7 +79,7 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
       .version('2.4.1')
       .arguments('<newName>')
       .option('-b, --bundleID [value]', 'Set custom bundle identifier eg. "com.junedomingo.travelapp"')
-      .action(newName => {
+      .action((newName) => {
         const nS_NewName = newName.replace(/\s/g, '');
         //const pattern = /^([\p{Letter}\p{Number}])+([\p{Letter}\p{Number}\s]+)$/u;
         const lC_Ns_NewAppName = nS_NewName.toLowerCase();
@@ -115,9 +115,9 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
         }
 
         // Move files and folders from ./config/foldersAndFiles.js
-        const resolveFoldersAndFiles = new Promise(resolve => {
+        const resolveFoldersAndFiles = new Promise((resolve) => {
           if (listOfFoldersAndFiles.length === 0) {
-                resolve();
+            resolve();
           }
           listOfFoldersAndFiles.forEach((element, index) => {
             const dest = element.replace(new RegExp(nS_CurrentAppName, 'i'), nS_NewName);
@@ -153,10 +153,10 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
 
         // Modify file content from ./config/filesToModifyContent.js
         const resolveFilesToModifyContent = () =>
-          new Promise(resolve => {
+          new Promise((resolve) => {
             let filePathsCount = 0;
             let itemsProcessed = 0;
-            listOfFilesToModifyContent.map(file => {
+            listOfFilesToModifyContent.map((file) => {
               filePathsCount += file.paths.length;
 
               file.paths.map((filePath, index) => {
@@ -177,8 +177,8 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
           });
 
         const resolveJavaFiles = () =>
-          new Promise(resolve => {
-            readFile(path.join(__dirname, 'android/app/src/main/AndroidManifest.xml')).then(data => {
+          new Promise((resolve) => {
+            readFile(path.join(__dirname, 'android/app/src/main/AndroidManifest.xml')).then((data) => {
               const $ = cheerio.load(data);
               const currentBundleID = $('manifest').attr('package');
               const newBundleID = program.bundleID ? bundleID : `com.${lC_Ns_NewAppName}`;
@@ -195,12 +195,26 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
 
               const fullCurrentBundlePath = path.join(__dirname, currentJavaPath);
               const fullNewBundlePath = path.join(__dirname, newBundlePath);
-
+              const fullCurrentDebugBundlePath = path.join(__dirname, currentJavaPath.replace('main', 'debug'));
+              const fullNewDebugBundlePath = path.join(__dirname, newBundlePath.replace('main', 'debug'));
               // Create new bundle folder if doesn't exist yet
               if (!fs.existsSync(fullNewBundlePath)) {
                 shell.mkdir('-p', fullNewBundlePath);
-                const move = shell.exec(`git mv "${fullCurrentBundlePath}/"* "${fullNewBundlePath}" 2>/dev/null`);
-                const successMsg = `${newBundlePath} ${colors.green('BUNDLE INDENTIFIER CHANGED')}`;
+                let move = shell.exec(`git mv "${fullCurrentBundlePath}/"* "${fullNewBundlePath}" 2>/dev/null`);
+                let successMsg = `${newBundlePath} ${colors.green('BUNDLE INDENTIFIER CHANGED')}`;
+
+                if (move.code === 0) {
+                  console.log(successMsg);
+                } else if (move.code === 128) {
+                  // if "outside repository" error occured
+                  if (shell.mv('-f', fullCurrentBundlePath + '/*', fullNewBundlePath).code === 0) {
+                    console.log(successMsg);
+                  } else {
+                    console.log(`Error moving: "${currentJavaPath}" "${newBundlePath}"`);
+                  }
+                }
+                move = shell.exec(`git mv "${fullCurrentDebugBundlePath}/"* "${fullNewDebugBundlePath}" 2>/dev/null`);
+                successMsg = `${newBundlePath} ${colors.green('BUNDLE INDENTIFIER CHANGED AT DEBUG')}`;
 
                 if (move.code === 0) {
                   console.log(successMsg);
@@ -226,13 +240,13 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
             });
           });
 
-        const resolveBundleIdentifiers = params =>
-          new Promise(resolve => {
+        const resolveBundleIdentifiers = (params) =>
+          new Promise((resolve) => {
             let filePathsCount = 0;
             const { currentBundleID, newBundleID, newBundlePath, javaFileBase, currentJavaPath, newJavaPath } = params;
 
             bundleIdentifiers(currentAppName, newName, projectName, currentBundleID, newBundleID, newBundlePath).map(
-              file => {
+              (file) => {
                 filePathsCount += file.paths.length - 1;
                 let itemsProcessed = 0;
 
@@ -258,12 +272,12 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
             // ! Maybe not the best approach
             // TODO: Find another solution
             const newAndroidPath = path.join(__dirname, newBundlePath);
-            fs.readdir(newAndroidPath, function(err, files) {
+            fs.readdir(newAndroidPath, function (err, files) {
               //handling error
               if (err) {
                 return console.log('Unable to scan directory: ' + err);
               }
-              const filePaths = files.map(file => `${newAndroidPath}/${file}`);
+              const filePaths = files.map((file) => `${newAndroidPath}/${file}`);
               replace({
                 regex: currentBundleID,
                 replacement: newBundleID,
@@ -307,7 +321,7 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
       .parse(process.argv);
     if (!process.argv.slice(2).length) program.outputHelp();
   })
-  .catch(err => {
+  .catch((err) => {
     if (err.code === 'ENOENT') return console.log('Directory should be created using "react-native init"');
 
     return console.log('Something went wrong: ', err);
