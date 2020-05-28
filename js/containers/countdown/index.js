@@ -28,7 +28,7 @@ const Main = props => {
             setProgress(progress => {
                 if (progress === time) {
                     delay(holdTime).then(() => {
-                        if (event === 'Whistle') {
+                        if (sound === 'Whistle') {
                             play('whistle');
                         } else {
                             play('go');
