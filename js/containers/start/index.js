@@ -39,11 +39,11 @@ const Main = props => {
                 </TouchableHighlight>
                 <RNPickerSelect
                     onValueChange={setTime}
-                    items={Array(10).fill().map((x,i)=>{
-                        const sec=i+5;
+                    items={Array(10).fill().map((x, i) => {
+                        const sec = i + 5
                         return {
-                            label:sec+' seconds',
-                            value:sec
+                            label: sec + ' seconds',
+                            value: sec
                         }
                     })}
                 >
@@ -51,11 +51,11 @@ const Main = props => {
                         <Text style={[styles.text]}>{time.toFixed(2)}</Text>
                         <Text style={[styles.text]}>Tap to Change</Text>
                     </View>
-                    </RNPickerSelect>
+                </RNPickerSelect>
             </View>
             <View style={[styles.footer]}>
                 <TouchableHighlight onPress={() => {
-                    navigate('Settings');
+                    navigate('Settings')
                 }}>
                     <View style={[styles.setting]}>
                         <Setting

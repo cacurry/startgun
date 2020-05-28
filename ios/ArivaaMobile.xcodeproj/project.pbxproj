@@ -12,6 +12,10 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		16841D20247FC2A2007D800B /* marks.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1C247FC2A1007D800B /* marks.wav */; };
+		16841D21247FC2A2007D800B /* whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1D247FC2A2007D800B /* whistle.mp3 */; };
+		16841D22247FC2A2007D800B /* go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1E247FC2A2007D800B /* go.mp3 */; };
+		16841D23247FC2A2007D800B /* set.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1F247FC2A2007D800B /* set.wav */; };
 		2BBDE2804ADA4528998E48F3 /* libPods-ArivaaMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D808EB79E08E81AA5EBF5291 /* libPods-ArivaaMobile.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -52,6 +56,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ArivaaMobile/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ArivaaMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ArivaaMobile/main.m; sourceTree = "<group>"; };
+		16841D1C247FC2A1007D800B /* marks.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = marks.wav; path = ../android/app/src/main/res/raw/marks.wav; sourceTree = "<group>"; };
+		16841D1D247FC2A2007D800B /* whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = whistle.mp3; path = ../android/app/src/main/res/raw/whistle.mp3; sourceTree = "<group>"; };
+		16841D1E247FC2A2007D800B /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = go.mp3; path = ../android/app/src/main/res/raw/go.mp3; sourceTree = "<group>"; };
+		16841D1F247FC2A2007D800B /* set.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = set.wav; path = ../android/app/src/main/res/raw/set.wav; sourceTree = "<group>"; };
 		1BDE5942112DA7E20DE950A2 /* libPods-ArivaaMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DFCEBCEDC0996A3BE4186E /* Pods-ArivaaMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-tvOSTests/Pods-ArivaaMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* ArivaaMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArivaaMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +201,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				16841D1E247FC2A2007D800B /* go.mp3 */,
+				16841D1C247FC2A1007D800B /* marks.wav */,
+				16841D1F247FC2A2007D800B /* set.wav */,
+				16841D1D247FC2A2007D800B /* whistle.mp3 */,
 				13B07FAE1A68108700A75B9A /* ArivaaMobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ArivaaMobileTests */,
@@ -356,9 +368,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16841D21247FC2A2007D800B /* whistle.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				16841D23247FC2A2007D800B /* set.wav in Resources */,
+				16841D22247FC2A2007D800B /* go.mp3 in Resources */,
 				B60287A42464B009009B6979 /* SplashScreen.storyboard in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				16841D20247FC2A2007D800B /* marks.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
