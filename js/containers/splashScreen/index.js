@@ -12,10 +12,11 @@ import { View } from 'react-native'
 import SplashSVG from '../../../assets/splash.svg'
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
-import { getData } from '../../utils/storage';
+import { getData,clearData } from '../../utils/storage';
 const Main = props => {
     const { setReducer, navigate } = props;
     const setData = async () => {
+        await clearData();
         setReducer(await getData());
         navigate('Start');
     }

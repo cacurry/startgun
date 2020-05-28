@@ -22,13 +22,13 @@ import { fields } from '../../utils/settings';
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
 const Main = props => {
-    const { ui, setValue,navigate } = props;
+    const { ui, setValue,back } = props;
     const {random}=ui;
     const [current, setCurrent] = useState(-1);
     return (
         <View style={[styles.settings]}>
             <View style={[styles.content]}>
-                <TouchableHighlight style={[styles.close]}>
+                <TouchableHighlight onPress={back} style={[styles.close]}>
                     <Image source={close} style={[styles.closeIcon]} />
                 </TouchableHighlight>
                 <View style={[styles.logo]}>
@@ -63,7 +63,7 @@ const Main = props => {
                                                         maximumTrackTintColor={'#fff'}
                                                         thumbTintColor={'#706c4c'}
                                                         thumbStyle={{ borderWidth: 3, borderColor: '#f2c957' }}
-                                                        value={0.75}
+                                                        value={ui[key]}
                                                         onValueChange={value => {
                                                             setValue(key, value);
                                                         }}
@@ -116,9 +116,7 @@ const Main = props => {
             </View>
             <View style={[styles.footer]}>
                 <TouchableHighlight
-                    onPress={()=>{
-                        navigate('Start');
-                    }}
+                    onPress={back}
                 >
                     <View style={[styles.setting]}>
                         <Setting

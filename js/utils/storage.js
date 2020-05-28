@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-const { setItem, getAllKeys, getItem } = AsyncStorage;
+const { setItem, getAllKeys, getItem,removeItem } = AsyncStorage;
 export async function saveData(obj) {
     await Promise.all(Object.keys(obj).map(async key => {
         return await setItem(key, JSON.stringify(obj[key]));
@@ -21,4 +21,10 @@ export async function getData() {
         }
     }));
     return obj;
+}
+export async function clearData(){
+    const keys = await getAllKeys();
+    await Promise.all(keys.map(async key=>{
+        return await removeItem(key);
+    }))
 }
