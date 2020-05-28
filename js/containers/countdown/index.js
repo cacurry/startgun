@@ -18,7 +18,6 @@ import { connect } from 'react-redux';
 import {delay} from '../../utils/common';
 import { play } from '../../utils/audio';
 let interval;
-let timeout;
 const Main = props => {
     const { time, random, holdTime } = props;
     const [progress, setProgress] = useState(0);
@@ -29,6 +28,7 @@ const Main = props => {
             setProgress(progress => {
                 if (progress === time) {
                     delay(holdTime).then(()=>{
+                        play('go');
                         setFinish(true);
                     });
                     return progress+1;
@@ -84,7 +84,6 @@ const Main = props => {
         play('set');
     }
     if (remTime<0) {
-        play('go');
         msg = 'Go';
     }
     return (
