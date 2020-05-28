@@ -131,7 +131,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.arivaamobile"
+        applicationId "com.start.gun"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
