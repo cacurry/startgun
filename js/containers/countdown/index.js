@@ -15,10 +15,12 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import hold from '../../../assets/hold.png';
 import go from '../../../assets/go.png';
 import { connect } from 'react-redux';
+import {delay} from '../../utils/common';
 import { play } from '../../utils/audio';
 let interval;
+let timeout;
 const Main = props => {
-    const { time, random } = props;
+    const { time, random, holdTime } = props;
     const [progress, setProgress] = useState(0);
     const [isPolling, setPolling] = useState(false);
     const [isFinished, setFinish] = useState(false);
@@ -26,8 +28,10 @@ const Main = props => {
         interval = setInterval(() => {
             setProgress(progress => {
                 if (progress === time) {
-                    setFinish(true);
-                    return progress;
+                    delay(holdTime).then(()=>{
+                        setFinish(true);
+                    });
+                    return progress+1;
                 }
                 return progress + 1;
             });
@@ -73,10 +77,14 @@ const Main = props => {
     let msg = remTime;
     if (remTime === time) {
         msg = 'On Your Marks'
-        //play('marks');
+        play('marks');
     }
     if (!remTime) {
-        //play('go');
+        msg = 'Get Set';
+        play('set');
+    }
+    if (remTime<0) {
+        play('go');
         msg = 'Go';
     }
     return (
@@ -127,10 +135,11 @@ const Main = props => {
     )
 }
 const mapStateToProps = ({ ui }) => {
-    const { time, random } = ui;
+    const { time, random, holdTime } = ui;
     return {
         time,
-        random
+        random,
+        holdTime
     }
 }
 export default connect(mapStateToProps)(Main)
