@@ -193,6 +193,9 @@ readFile(_path2.default.join(__dirname, 'android/app/src/main/res/values/strings
 
         // Move files and folders from ./config/foldersAndFiles.js
         var resolveFoldersAndFiles = new Promise(function (resolve) {
+          if (listOfFoldersAndFiles.length === 0) {
+            resolve();
+          }
           listOfFoldersAndFiles.forEach(function (element, index) {
             var dest = element.replace(new RegExp(nS_CurrentAppName, 'i'), nS_NewName);
             var itemsProcessed = 1;
