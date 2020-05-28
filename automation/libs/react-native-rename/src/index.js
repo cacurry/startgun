@@ -196,12 +196,13 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
               const fullCurrentBundlePath = path.join(__dirname, currentJavaPath);
               const fullNewBundlePath = path.join(__dirname, newBundlePath);
               const fullCurrentDebugBundlePath = path.join(__dirname, currentJavaPath.replace('main', 'debug'));
-              const fullNewDebugBundlePath = path.join(__dirname, newBundlePath.replace('main', 'debug'));
+              const fullNewDebugBundlePath = path.join(__dirname, newBundlePath.replace('main', 'debug'));       
+              let move, successMsg;
               // Create new bundle folder if doesn't exist yet
               if (!fs.existsSync(fullNewBundlePath)) {
                 shell.mkdir('-p', fullNewBundlePath);
-                let move = shell.exec(`git mv "${fullCurrentBundlePath}/"* "${fullNewBundlePath}" 2>/dev/null`);
-                let successMsg = `${newBundlePath} ${colors.green('BUNDLE INDENTIFIER CHANGED')}`;
+                move = shell.exec(`git mv "${fullCurrentBundlePath}/"* "${fullNewBundlePath}" 2>/dev/null`);
+                successMsg = `${newBundlePath} ${colors.green('BUNDLE INDENTIFIER CHANGED')}`;
 
                 if (move.code === 0) {
                   console.log(successMsg);
@@ -213,7 +214,11 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
                     console.log(`Error moving: "${currentJavaPath}" "${newBundlePath}"`);
                   }
                 }
+              }
+              if (!fs.existsSync(fullNewDebugBundlePath)) {
+                shell.mkdir('-p', fullNewDebugBundlePath);
                 move = shell.exec(`git mv "${fullCurrentDebugBundlePath}/"* "${fullNewDebugBundlePath}" 2>/dev/null`);
+                shell.exec(`rm -f -r "${fullCurrentDebugBundlePath}" 2>/dev/null`);
                 successMsg = `${newBundlePath} ${colors.green('BUNDLE INDENTIFIER CHANGED AT DEBUG')}`;
 
                 if (move.code === 0) {
@@ -227,7 +232,6 @@ readFile(path.join(__dirname, 'android/app/src/main/res/values/strings.xml'))
                   }
                 }
               }
-
               const vars = {
                 currentBundleID,
                 newBundleID,
