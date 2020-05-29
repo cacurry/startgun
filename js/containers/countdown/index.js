@@ -14,6 +14,8 @@ import {
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import hold from '../../../assets/hold.png';
 import go from '../../../assets/go.png';
+import ready from '../../../assets/ready.png';
+import set from '../../../assets/set.png';
 import { connect } from 'react-redux';
 import { delay } from '../../utils/common';
 import { play } from '../../utils/audio';
@@ -81,15 +83,18 @@ const Main = props => {
     const fill = progress * (100 / time);
     const remTime = time - progress;
     let msg = remTime;
+    let source = ready;
     if (remTime === time) {
         msg = 'On Your Marks'
         play('marks');
     }
     if (!remTime) {
+        source = set;
         msg = 'Get Set';
         play('set');
     }
     if (remTime < 0) {
+        source = go;
         msg = 'Go';
     }
     return (
@@ -129,7 +134,7 @@ const Main = props => {
                         }
                     </AnimatedCircularProgress>
                     <View style={[styles.position]}>
-                        <Image source={go} style={[styles.image]} />
+                        <Image source={source} style={[styles.image]} />
                     </View>
                 </View>
                 <TouchableHighlight onPress={click} style={[styles.button]}>
