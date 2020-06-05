@@ -19,46 +19,15 @@ import set from '../../../assets/set.png';
 import { connect } from 'react-redux';
 import { delay } from '../../utils/common';
 import { play } from '../../utils/audio';
+const DISTANCE = 'DISTANCE';
+const SPRINTS = 'SPRINTS';
 let interval;
+let timeout;
 const Main = props => {
     const { time, random, holdTime, event, sound } = props;
-    const [progress, setProgress] = useState(0);
     const [isPolling, setPolling] = useState(false);
-    const [isFinished, setFinish] = useState(false);
-    const startPolling = () => {
-        interval = setInterval(() => {
-            setProgress(progress => {
-                if (progress === time) {
-                    delay(holdTime).then(() => {
-                        if (sound === 'Whistle') {
-                            play('whistle');
-                        } else {
-                            play('go');
-                        }
-                        setFinish(true);
-                    });
-                }
-                return progress + 1;
-            });
-        }, 1000);
-    }
-    const stopPolling = () => {
-        if (interval) {
-            clearInterval(interval);
-            interval = null;
-        }
-    }
-    const togglePolling = () => {
-        setPolling(isPolling => !isPolling);
-    }
-    const click = () => {
-        if (isFinished) {
-            setFinish(false);
-            setProgress(0);
-        } else {
-            togglePolling();
-        }
-    };
+    const [progress, setProgress] = useState(0);
+    const [message, setMessage] = useState('');
     useEffect(() => {
         if (isPolling) {
             startPolling();
@@ -66,37 +35,86 @@ const Main = props => {
             stopPolling();
         }
     }, [isPolling]);
-    useEffect(() => {
-        if (isFinished) {
-            togglePolling();
+    const startPolling = () => {
+        if (!progress && event === SPRINTS) {
+            setMessage('On Your Marks');
         }
-    }, [isFinished]);
+        interval = setInterval(() => {
+            setProgress(progress => {
+                progress = progress + (100 / time);
+                if (progress === 100) {
+                    if (event === DISTANCE) {
+                        setMessage('On Your Marks');
+                    }
+                    if (event === SPRINTS) {
+                        setMessage('Get Set');
+                        timeout=delay(holdTime,()=>{
+                            setMessage('Go');
+                        });
+                    }
+                    setPolling(false);
+                } else {
+                    if (event === SPRINTS) {
+                        if (progress > 0) {
+                            setMessage('');
+                        }
+                    }
+                }
+                return progress;
+            });
+        }, 1000);
+    }
+    const onFinish = () => {
+        setProgress(0);
+        setMessage('');
+    }
+    const stopPolling = () => {
+        if (interval) {
+            clearInterval(interval);
+            interval = '';
+        }
+        if (timeout) {
+            clearTimeout(timeout);
+            timeout = '';
+        }
+    }
     useEffect(() => {
-        togglePolling();
+        setPolling(true);
         return () => {
-            if (interval) {
-                clearInterval(interval);
-                interval = null;
-            }
+            stopPolling();
         }
     }, []);
-    const fill = progress * (100 / time);
-    const remTime = time - progress;
-    let msg = remTime;
     let source = ready;
-    if (remTime === time) {
-        msg = 'On Your Marks'
-        play('marks');
+    useEffect(() => {
+        switch (message) {
+            case 'On Your Marks': {
+                play('marks').then(() => {
+                    if (event === DISTANCE) {
+                        setMessage('Go');
+                    }
+                });
+                break;
+            }
+            case 'Get Set': {
+                play('set');
+                source = set;
+                break;
+            }
+            case 'Go': {
+                if(sound==='Whistle'){
+                    play('whistle').then(onFinish);
+                } else {
+                    play('go').then(onFinish);
+                }
+                source = go;
+                break;
+            }
+        }
+    }, [message]);
+    const click = () => {
+        setPolling(polling => !polling);
     }
-    if (!remTime) {
-        source = set;
-        msg = 'Get Set';
-        play('set');
-    }
-    if (remTime < 0) {
-        source = go;
-        msg = 'Go';
-    }
+    const remTime = time - (progress * time) / 100;
     return (
         <View style={[styles.countdown]}>
             <View style={[styles.content]}>
@@ -115,7 +133,7 @@ const Main = props => {
                         size={320}
                         width={20}
                         backgroundWidth={3}
-                        fill={fill}
+                        fill={progress}
                         tintColor="#f1c857"
                         tintColorSecondary="#f1c857"
                         backgroundColor="#404a5b"
@@ -127,7 +145,7 @@ const Main = props => {
                             () => (
                                 <Text style={[styles.fill]}>
                                     {
-                                        msg
+                                        message || remTime
                                     }
                                 </Text>
                             )
@@ -138,7 +156,7 @@ const Main = props => {
                     </View>
                 </View>
                 <TouchableHighlight onPress={click} style={[styles.button]}>
-                    <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : isFinished ? 'Reset' : 'Resume'}</Text>
+                    <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : 'Start'}</Text>
                 </TouchableHighlight>
             </View>
         </View>
