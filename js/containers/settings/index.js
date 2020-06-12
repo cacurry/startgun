@@ -21,6 +21,7 @@ import close from '../../../assets/close.png'
 import { fields } from '../../utils/settings';
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
+import {getRandomTime} from '../../utils/common';
 const Main = props => {
     const { ui, setValue,back } = props;
     const {random}=ui;
@@ -74,6 +75,9 @@ const Main = props => {
                                                 </View> :
                                                 <TouchableHighlight onPress={() => {
                                                     setValue('random', !random);
+                                                    if(!random){
+                                                        setValue(key,getRandomTime());
+                                                    }
                                                 }}>
                                                     <View style={[styles.button, random&&styles.yellowBtn]}>
                                                         <Text style={[styles.buttonText]}>Random</Text>
