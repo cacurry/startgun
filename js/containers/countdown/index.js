@@ -175,6 +175,12 @@ const Main = props => {
                 <TouchableHighlight onPress={click} style={[styles.button]}>
                     <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : 'Start'}</Text>
                 </TouchableHighlight>
+                <TouchableHighlight onPress={back}>
+                    <Setting 
+                        width={'100%'}
+                        height={'100%'}
+                    />
+                </TouchableHighlight>
             </View>
         </View>
     )
