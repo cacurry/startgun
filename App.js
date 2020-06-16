@@ -22,7 +22,7 @@ const screens = {
   Start,
   CountDown
 };
-const Navigator = props => {
+const Navigator = () => {
   const [routes, setRoutes] = useState(['Splash']);
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {

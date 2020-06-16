@@ -48,6 +48,8 @@ const Main = props => {
                                         <TouchableHighlight onPress={() => {
                                             if (current !== index) {
                                                 setCurrent(index);
+                                            } else {
+                                                setCurrent(-1);
                                             }
                                         }}>
                                             <View style={[styles.button]}>
@@ -96,6 +98,9 @@ const Main = props => {
                                                 const { title, image } = option;
                                                 return (
                                                     <TouchableHighlight key={index} onPress={() => {
+                                                        if(current!==-1){
+                                                            setCurrent(-1);
+                                                        }
                                                         setValue(key, title);
                                                     }}>
                                                         <View style={[styles.button, ui[key] === title && styles.yellowBtn]}>
