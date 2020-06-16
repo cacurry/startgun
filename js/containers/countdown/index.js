@@ -67,6 +67,7 @@ const Main = props => {
     const onFinish = () => {
         setProgress(0);
         setMessage('');
+        setPolling(false);
     }
     const stopPolling = () => {
         if (interval) {
@@ -97,7 +98,6 @@ const Main = props => {
             }
             case 'Get Set': {
                 play('set');
-                source = set;
                 break;
             }
             case 'Go': {
@@ -106,11 +106,23 @@ const Main = props => {
                 } else {
                     play('go').then(onFinish);
                 }
-                source = go;
                 break;
             }
         }
     }, [message]);
+    switch (message) {
+        case 'On Your Marks': {
+            break;
+        }
+        case 'Get Set': {
+            source = set;
+            break;
+        }
+        case 'Go': {
+            source = go;
+            break;
+        }
+    }
     const click = () => {
         setPolling(polling => !polling);
     }
