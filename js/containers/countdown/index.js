@@ -14,6 +14,7 @@ import {
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
 import hold from '../../../assets/hold.png';
 import go from '../../../assets/go.png';
+import Setting from '../../../assets/setting.svg'
 import ready from '../../../assets/ready.png';
 import set from '../../../assets/set.png';
 import { connect } from 'react-redux';
@@ -24,7 +25,7 @@ const SPRINTS = 'SPRINTS';
 let interval;
 let timeout;
 const Main = props => {
-    const { time, random, holdTime, event, sound } = props;
+    const { time, random, holdTime, event, sound,back } = props;
     const [isPolling, setPolling] = useState(false);
     const [progress, setProgress] = useState(0);
     const [message, setMessage] = useState('');
@@ -48,8 +49,9 @@ const Main = props => {
                     }
                     if (event === SPRINTS) {
                         setMessage('Get Set');
-                        timeout=delay(holdTime,()=>{
+                        timeout = delay(holdTime, () => {
                             setMessage('Go');
+                            timeout = '';
                         });
                     }
                     setPolling(false);
@@ -69,12 +71,12 @@ const Main = props => {
         setMessage('');
         setPolling(false);
     }
-    const stopPolling = () => {
+    const stopPolling = (isUnMount) => {
         if (interval) {
             clearInterval(interval);
             interval = '';
         }
-        if (timeout) {
+        if (isUnMount && timeout) {
             clearTimeout(timeout);
             timeout = '';
         }
@@ -82,7 +84,7 @@ const Main = props => {
     useEffect(() => {
         setPolling(true);
         return () => {
-            stopPolling();
+            stopPolling(true);
         }
     }, []);
     let source = ready;
@@ -101,7 +103,7 @@ const Main = props => {
                 break;
             }
             case 'Go': {
-                if(sound==='Whistle'){
+                if (sound === 'Whistle') {
                     play('whistle').then(onFinish);
                 } else {
                     play('go').then(onFinish);
@@ -124,6 +126,9 @@ const Main = props => {
         }
     }
     const click = () => {
+        if (timeout) {
+            return;
+        }
         setPolling(polling => !polling);
     }
     const remTime = time - (progress * time) / 100;
@@ -157,7 +162,7 @@ const Main = props => {
                             () => (
                                 <Text style={[styles.fill]}>
                                     {
-                                        message || remTime
+                                        message || (parseInt(remTime))
                                     }
                                 </Text>
                             )

@@ -124,16 +124,7 @@ const Main = props => {
                 </View>
             </View>
             <View style={[styles.footer]}>
-                <TouchableHighlight
-                    onPress={back}
-                >
-                    <View style={[styles.setting]}>
-                        <Setting
-                            width={'100%'}
-                            height={'100%'}
-                        />
-                    </View>
-                </TouchableHighlight>
+                
                 <Text style={[styles.copyright]}>© Startgun 2020</Text>
             </View>
         </View>
