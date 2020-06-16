@@ -29,7 +29,7 @@ const Main = props => {
     return (
         <View style={[styles.settings]}>
             <View style={[styles.content]}>
-                <TouchableHighlight onPress={back} style={[styles.close]}>
+                <TouchableHighlight underlayColor='transparent' onPress={back} style={[styles.close]}>
                     <Image source={close} style={[styles.closeIcon]} />
                 </TouchableHighlight>
                 <View style={[styles.logo]}>
@@ -45,7 +45,7 @@ const Main = props => {
                                 return (
                                     <View style={[styles.action]} key={index}>
                                         <Text style={[styles.label]}>{title}</Text>
-                                        <TouchableHighlight onPress={() => {
+                                        <TouchableHighlight underlayColor='transparent' onPress={() => {
                                             if (current !== index) {
                                                 setCurrent(index);
                                             } else {
@@ -75,7 +75,7 @@ const Main = props => {
                                                         }}
                                                     />
                                                 </View> :
-                                                <TouchableHighlight onPress={() => {
+                                                <TouchableHighlight underlayColor='transparent' onPress={() => {
                                                     setValue('random', !random);
                                                     if(!random){
                                                         setValue(key,getRandomTime());
@@ -97,7 +97,7 @@ const Main = props => {
                                             options.map((option, index) => {
                                                 const { title, image } = option;
                                                 return (
-                                                    <TouchableHighlight key={index} onPress={() => {
+                                                    <TouchableHighlight underlayColor='transparent' key={index} onPress={() => {
                                                         if(current!==-1){
                                                             setCurrent(-1);
                                                         }

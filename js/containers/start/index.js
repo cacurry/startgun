@@ -26,6 +26,7 @@ const Main = props => {
         <View style={[styles.start]}>
             <View style={[styles.content]}>
                 <TouchableHighlight
+                    underlayColor='transparent'
                     onPress={() => {
                         navigate('CountDown')
                     }}
@@ -54,7 +55,7 @@ const Main = props => {
                 </RNPickerSelect>
             </View>
             <View style={[styles.footer]}>
-                <TouchableHighlight onPress={() => {
+                <TouchableHighlight underlayColor='transparent' onPress={() => {
                     navigate('Settings')
                 }}>
                     <View style={[styles.setting]}>

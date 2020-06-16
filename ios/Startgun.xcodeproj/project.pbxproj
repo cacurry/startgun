@@ -16,15 +16,15 @@
 		16841D21247FC2A2007D800B /* whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1D247FC2A2007D800B /* whistle.mp3 */; };
 		16841D22247FC2A2007D800B /* go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1E247FC2A2007D800B /* go.mp3 */; };
 		16841D23247FC2A2007D800B /* set.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16841D1F247FC2A2007D800B /* set.wav */; };
-		2BBDE2804ADA4528998E48F3 /* libPods-ArivaaMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D808EB79E08E81AA5EBF5291 /* libPods-ArivaaMobile.a */; };
+		180FA3594B29D12F97662DE3 /* libPods-Startgun-StartgunTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C0CB455F3E1CF2AE8DFD37 /* libPods-Startgun-StartgunTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ArivaaMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ArivaaMobileTests.m */; };
-		8A06FD68EA7DCC1051888F97 /* libPods-ArivaaMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8B4C834492ECE69164EACB /* libPods-ArivaaMobile-tvOS.a */; };
+		515B181B512BC5513186F683 /* libPods-Startgun-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A183D16E2CD6BA6A5BF29A /* libPods-Startgun-tvOS.a */; };
+		565F297336CA11A48073B954 /* libPods-Startgun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25E3F2BB78822AF3BB74FE2 /* libPods-Startgun.a */; };
 		B60287A42464B009009B6979 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60287A32464B009009B6979 /* SplashScreen.storyboard */; };
-		CBD8B10E0176A5E476865DC5 /* libPods-ArivaaMobile-ArivaaMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5231EEAF4D1DD174557082DD /* libPods-ArivaaMobile-ArivaaMobileTests.a */; };
-		E85E8F744F59261EC9D66C77 /* libPods-ArivaaMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDE5942112DA7E20DE950A2 /* libPods-ArivaaMobile-tvOSTests.a */; };
+		E56E857978DF2FC051358781 /* libPods-Startgun-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF47115B01C87CA69F3B37D /* libPods-Startgun-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,9 @@
 		00E356EE1AD99517003FC87E /* StartgunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartgunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ArivaaMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArivaaMobileTests.m; sourceTree = "<group>"; };
+		01C0CB455F3E1CF2AE8DFD37 /* libPods-Startgun-StartgunTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Startgun-StartgunTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A244EC565C56BA740A68A6F /* Pods-Startgun-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Startgun-tvOSTests/Pods-Startgun-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D72E3BAE3E775321C405D79 /* Pods-Startgun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun.release.xcconfig"; path = "Target Support Files/Pods-Startgun/Pods-Startgun.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Startgun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Startgun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ArivaaMobile/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ArivaaMobile/AppDelegate.m; sourceTree = "<group>"; };
@@ -60,31 +63,36 @@
 		16841D1D247FC2A2007D800B /* whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = whistle.mp3; path = ../android/app/src/main/res/raw/whistle.mp3; sourceTree = "<group>"; };
 		16841D1E247FC2A2007D800B /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = go.mp3; path = ../android/app/src/main/res/raw/go.mp3; sourceTree = "<group>"; };
 		16841D1F247FC2A2007D800B /* set.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = set.wav; path = ../android/app/src/main/res/raw/set.wav; sourceTree = "<group>"; };
-		1BDE5942112DA7E20DE950A2 /* libPods-ArivaaMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DFCEBCEDC0996A3BE4186E /* Pods-ArivaaMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-tvOSTests/Pods-ArivaaMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Startgun-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Startgun-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Startgun-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Startgun-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF9098826AB26ACFA145BD5 /* Pods-ArivaaMobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-tvOS/Pods-ArivaaMobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		3A8B4C834492ECE69164EACB /* libPods-ArivaaMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5231EEAF4D1DD174557082DD /* libPods-ArivaaMobile-ArivaaMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile-ArivaaMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A183D16E2CD6BA6A5BF29A /* libPods-Startgun-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Startgun-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE91346112BBA4F5CE64328 /* Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-ArivaaMobileTests/Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		63DE457E029F1446D9EAC72C /* Pods-ArivaaMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile/Pods-ArivaaMobile.release.xcconfig"; sourceTree = "<group>"; };
 		704A9238B5DDB932D9941808 /* Pods-ArivaaMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile.debug.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile/Pods-ArivaaMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		73E7780ACF8A0BA12722962B /* Pods-Startgun-StartgunTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun-StartgunTests.release.xcconfig"; path = "Target Support Files/Pods-Startgun-StartgunTests/Pods-Startgun-StartgunTests.release.xcconfig"; sourceTree = "<group>"; };
+		7922A90D333C899BEF85828C /* Pods-Startgun-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Startgun-tvOSTests/Pods-Startgun-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		873115289678523EEA23CD03 /* Pods-ArivaaMobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-tvOS/Pods-ArivaaMobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		88EBA79110C823974C8D8350 /* Pods-ArivaaMobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-tvOS/Pods-ArivaaMobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8CB229E284D3519376E90430 /* Pods-ArivaaMobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-tvOS/Pods-ArivaaMobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		8D76261410B2E2073E795BFB /* Pods-Startgun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun.debug.xcconfig"; path = "Target Support Files/Pods-Startgun/Pods-Startgun.debug.xcconfig"; sourceTree = "<group>"; };
 		A1B634E387DE7885419C2D51 /* Pods-ArivaaMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile.release.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile/Pods-ArivaaMobile.release.xcconfig"; sourceTree = "<group>"; };
+		A25E3F2BB78822AF3BB74FE2 /* libPods-Startgun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Startgun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2BAFD4666BE520B018DAB0 /* Pods-Startgun-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Startgun-tvOS/Pods-Startgun-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B60287A32464B009009B6979 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		B7191CEBB924596F2DAF94B3 /* Pods-ArivaaMobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-tvOSTests/Pods-ArivaaMobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB30EA60E5C0DF157EBE3F7B /* Pods-Startgun-StartgunTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun-StartgunTests.debug.xcconfig"; path = "Target Support Files/Pods-Startgun-StartgunTests/Pods-Startgun-StartgunTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAD0CAA6B3B6A5BBD55C9F44 /* Pods-ArivaaMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-tvOSTests/Pods-ArivaaMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D15F314CAC465F0048D383A8 /* Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-ArivaaMobileTests/Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7272D25DD437107FD76CD79 /* Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-ArivaaMobileTests/Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D808EB79E08E81AA5EBF5291 /* libPods-ArivaaMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ArivaaMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF47115B01C87CA69F3B37D /* libPods-Startgun-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Startgun-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BD6B290E594A78F39AF285 /* Pods-ArivaaMobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ArivaaMobile-tvOSTests/Pods-ArivaaMobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBD306A9CE2F8F78CC688B4C /* Pods-ArivaaMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile/Pods-ArivaaMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EDD4DB21D0DD399205FEEFB3 /* Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArivaaMobile-ArivaaMobileTests/Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD9922D9B430565B20450CEB /* Pods-Startgun-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Startgun-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Startgun-tvOS/Pods-Startgun-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBD8B10E0176A5E476865DC5 /* libPods-ArivaaMobile-ArivaaMobileTests.a in Frameworks */,
+				180FA3594B29D12F97662DE3 /* libPods-Startgun-StartgunTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BBDE2804ADA4528998E48F3 /* libPods-ArivaaMobile.a in Frameworks */,
+				565F297336CA11A48073B954 /* libPods-Startgun.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A06FD68EA7DCC1051888F97 /* libPods-ArivaaMobile-tvOS.a in Frameworks */,
+				515B181B512BC5513186F683 /* libPods-Startgun-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85E8F744F59261EC9D66C77 /* libPods-ArivaaMobile-tvOSTests.a in Frameworks */,
+				E56E857978DF2FC051358781 /* libPods-Startgun-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,10 +168,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				D808EB79E08E81AA5EBF5291 /* libPods-ArivaaMobile.a */,
-				5231EEAF4D1DD174557082DD /* libPods-ArivaaMobile-ArivaaMobileTests.a */,
-				3A8B4C834492ECE69164EACB /* libPods-ArivaaMobile-tvOS.a */,
-				1BDE5942112DA7E20DE950A2 /* libPods-ArivaaMobile-tvOSTests.a */,
+				A25E3F2BB78822AF3BB74FE2 /* libPods-Startgun.a */,
+				01C0CB455F3E1CF2AE8DFD37 /* libPods-Startgun-StartgunTests.a */,
+				47A183D16E2CD6BA6A5BF29A /* libPods-Startgun-tvOS.a */,
+				DEF47115B01C87CA69F3B37D /* libPods-Startgun-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,6 +195,14 @@
 				2DF9098826AB26ACFA145BD5 /* Pods-ArivaaMobile-tvOS.release.xcconfig */,
 				B7191CEBB924596F2DAF94B3 /* Pods-ArivaaMobile-tvOSTests.debug.xcconfig */,
 				CAD0CAA6B3B6A5BBD55C9F44 /* Pods-ArivaaMobile-tvOSTests.release.xcconfig */,
+				8D76261410B2E2073E795BFB /* Pods-Startgun.debug.xcconfig */,
+				0D72E3BAE3E775321C405D79 /* Pods-Startgun.release.xcconfig */,
+				BB30EA60E5C0DF157EBE3F7B /* Pods-Startgun-StartgunTests.debug.xcconfig */,
+				73E7780ACF8A0BA12722962B /* Pods-Startgun-StartgunTests.release.xcconfig */,
+				AE2BAFD4666BE520B018DAB0 /* Pods-Startgun-tvOS.debug.xcconfig */,
+				FD9922D9B430565B20450CEB /* Pods-Startgun-tvOS.release.xcconfig */,
+				0A244EC565C56BA740A68A6F /* Pods-Startgun-tvOSTests.debug.xcconfig */,
+				7922A90D333C899BEF85828C /* Pods-Startgun-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -413,7 +429,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArivaaMobile-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Startgun-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -463,7 +479,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArivaaMobile-ArivaaMobileTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Startgun-StartgunTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -485,7 +501,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArivaaMobile-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Startgun-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -507,7 +523,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArivaaMobile-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Startgun-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -619,7 +635,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7272D25DD437107FD76CD79 /* Pods-ArivaaMobile-ArivaaMobileTests.debug.xcconfig */;
+			baseConfigurationReference = BB30EA60E5C0DF157EBE3F7B /* Pods-Startgun-StartgunTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -642,7 +658,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AE91346112BBA4F5CE64328 /* Pods-ArivaaMobile-ArivaaMobileTests.release.xcconfig */;
+			baseConfigurationReference = 73E7780ACF8A0BA12722962B /* Pods-Startgun-StartgunTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -662,7 +678,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 704A9238B5DDB932D9941808 /* Pods-ArivaaMobile.debug.xcconfig */;
+			baseConfigurationReference = 8D76261410B2E2073E795BFB /* Pods-Startgun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -694,7 +710,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1B634E387DE7885419C2D51 /* Pods-ArivaaMobile.release.xcconfig */;
+			baseConfigurationReference = 0D72E3BAE3E775321C405D79 /* Pods-Startgun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -720,7 +736,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB229E284D3519376E90430 /* Pods-ArivaaMobile-tvOS.debug.xcconfig */;
+			baseConfigurationReference = AE2BAFD4666BE520B018DAB0 /* Pods-Startgun-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -748,7 +764,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 873115289678523EEA23CD03 /* Pods-ArivaaMobile-tvOS.release.xcconfig */;
+			baseConfigurationReference = FD9922D9B430565B20450CEB /* Pods-Startgun-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -776,7 +792,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8BD6B290E594A78F39AF285 /* Pods-ArivaaMobile-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0A244EC565C56BA740A68A6F /* Pods-Startgun-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -803,7 +819,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26DFCEBCEDC0996A3BE4186E /* Pods-ArivaaMobile-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 7922A90D333C899BEF85828C /* Pods-Startgun-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

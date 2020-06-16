@@ -12,135 +12,142 @@ import {
     View, Text, TouchableHighlight, Image, Platform
 } from 'react-native'
 import { AnimatedCircularProgress } from 'react-native-circular-progress'
-import hold from '../../../assets/hold.png';
-import go from '../../../assets/go.png';
+import hold from '../../../assets/hold.png'
+import go from '../../../assets/go.png'
 import Setting from '../../../assets/setting.svg'
-import ready from '../../../assets/ready.png';
-import set from '../../../assets/set.png';
-import { connect } from 'react-redux';
-import { delay } from '../../utils/common';
-import { play } from '../../utils/audio';
-const DISTANCE = 'DISTANCE';
-const SPRINTS = 'SPRINTS';
-let interval;
-let timeout;
+import ready from '../../../assets/ready.png'
+import backIcon from '../../../assets/back.png'
+import set from '../../../assets/set.png'
+import { connect } from 'react-redux'
+import { delay } from '../../utils/common'
+import { play } from '../../utils/audio'
+
+const DISTANCE = 'DISTANCE'
+const SPRINTS = 'SPRINTS'
+let interval
+let timeout
 const Main = props => {
-    const { time, random, holdTime, event, sound,back } = props;
-    const [isPolling, setPolling] = useState(false);
-    const [progress, setProgress] = useState(0);
-    const [message, setMessage] = useState('');
+    const {time, random, holdTime, event, sound, back} = props
+    const [isPolling, setPolling] = useState(false)
+    const [progress, setProgress] = useState(0)
+    const [message, setMessage] = useState('')
     useEffect(() => {
         if (isPolling) {
-            startPolling();
+            startPolling()
         } else {
-            stopPolling();
+            stopPolling()
         }
-    }, [isPolling]);
+    }, [isPolling])
     const startPolling = () => {
         if (!progress && event === SPRINTS) {
-            setMessage('On Your Marks');
+            setMessage('On Your Marks')
         }
         interval = setInterval(() => {
             setProgress(progress => {
-                progress = progress + (100 / time);
+                progress = progress + (100 / time)
                 if (progress === 100) {
                     if (event === DISTANCE) {
-                        setMessage('On Your Marks');
+                        setMessage('On Your Marks')
                     }
                     if (event === SPRINTS) {
-                        setMessage('Get Set');
+                        setMessage('Get Set')
                         timeout = delay(holdTime, () => {
-                            setMessage('Go');
-                            timeout = '';
-                        });
+                            setMessage('Go')
+                            timeout = ''
+                        })
                     }
-                    setPolling(false);
+                    setPolling(false)
                 } else {
                     if (event === SPRINTS) {
                         if (progress > 0) {
-                            setMessage('');
+                            setMessage('')
                         }
                     }
                 }
-                return progress;
-            });
-        }, 1000);
+                return progress
+            })
+        }, 1000)
     }
     const onFinish = () => {
-        setProgress(0);
-        setMessage('');
-        setPolling(false);
+        setProgress(0)
+        setMessage('')
+        setPolling(false)
     }
     const stopPolling = (isUnMount) => {
         if (interval) {
-            clearInterval(interval);
-            interval = '';
+            clearInterval(interval)
+            interval = ''
         }
         if (isUnMount && timeout) {
-            clearTimeout(timeout);
-            timeout = '';
+            clearTimeout(timeout)
+            timeout = ''
         }
     }
     useEffect(() => {
-        setPolling(true);
+        setPolling(true)
         return () => {
-            stopPolling(true);
+            stopPolling(true)
         }
-    }, []);
-    let source = ready;
+    }, [])
+    let source = ready
     useEffect(() => {
         switch (message) {
             case 'On Your Marks': {
                 play('marks').then(() => {
                     if (event === DISTANCE) {
-                        setMessage('Go');
+                        setMessage('Go')
                     }
-                });
-                break;
+                })
+                break
             }
             case 'Get Set': {
-                play('set');
-                break;
+                play('set')
+                break
             }
             case 'Go': {
                 if (sound === 'Whistle') {
-                    play('whistle').then(onFinish);
+                    play('whistle').then(onFinish)
                 } else {
-                    play('go').then(onFinish);
+                    play('go').then(onFinish)
                 }
-                break;
+                break
             }
         }
-    }, [message]);
+    }, [message])
     switch (message) {
         case 'On Your Marks': {
-            break;
+            break
         }
         case 'Get Set': {
-            source = set;
-            break;
+            source = set
+            break
         }
         case 'Go': {
-            source = go;
-            break;
+            source = go
+            break
         }
     }
     const click = () => {
         if (timeout) {
-            return;
+            return
         }
-        setPolling(polling => !polling);
+        setPolling(polling => !polling)
     }
-    const remTime = time - (progress * time) / 100;
+    const remTime = time - (progress * time) / 100
     return (
         <View style={[styles.countdown]}>
             <View style={[styles.content]}>
-                <TouchableHighlight style={[styles.time]}>
+                <View style={[styles.back]}>
+                    <TouchableHighlight underlayColor='transparent' onPress={back}>
+                        <Image source={backIcon} style={[styles.backIcon]}/>
+                    </TouchableHighlight>
+                </View>
+                <TouchableHighlight underlayColor='transparent' style={[styles.time]}>
                     <View>
                         <Text style={[styles.text]}>Hold Time</Text>
                         {
                             random ?
-                                <Image source={hold} style={[styles.holdImg]} /> :
+                                <Image source={hold} style={[styles.holdImg]}/> :
                                 <Text style={[styles.timer]}>{time}s</Text>
                         }
                     </View>
@@ -169,24 +176,19 @@ const Main = props => {
                         }
                     </AnimatedCircularProgress>
                     <View style={[styles.position]}>
-                        <Image source={source} style={[styles.image]} />
+                        <Image source={source} style={[styles.image]}/>
                     </View>
                 </View>
-                <TouchableHighlight onPress={click} style={[styles.button]}>
+                <TouchableHighlight underlayColor='transparent' onPress={click} style={[styles.button]}>
                     <Text style={[styles.buttonText]}>{isPolling ? 'Stop' : 'Start'}</Text>
                 </TouchableHighlight>
-                <TouchableHighlight onPress={back}>
-                    <Setting 
-                        width={'100%'}
-                        height={'100%'}
-                    />
-                </TouchableHighlight>
             </View>
+
         </View>
     )
 }
-const mapStateToProps = ({ ui }) => {
-    const { time, random, holdTime, event, sound } = ui;
+const mapStateToProps = ({ui}) => {
+    const {time, random, holdTime, event, sound} = ui
     return {
         time,
         random,

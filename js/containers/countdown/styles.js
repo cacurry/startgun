@@ -13,6 +13,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: Platform.OS === 'ios' ? 80 : 30
     },
+    back: {
+        position: 'absolute',
+        width: '100%',
+        zIndex: 4,
+        left: 20,
+        top: Platform.OS === 'ios' ? 70 : 25
+    },
+    backIcon: {
+        width: 30,
+        height: 30,
+        resizeMode: 'contain'
+    },
     text: {
         color: '#ced0d6',
         fontSize: 18,

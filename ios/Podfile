@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'ArivaaMobile' do
-  # Pods for ArivaaMobile
+target 'Startgun' do
+  # Pods for Startgun
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -79,7 +79,7 @@ target 'ArivaaMobile' do
 
 
 
-  target 'ArivaaMobileTests' do
+  target 'StartgunTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -96,10 +96,10 @@ target 'ArivaaMobile' do
   end
 end
 
-target 'ArivaaMobile-tvOS' do
-  # Pods for ArivaaMobile-tvOS
+target 'Startgun-tvOS' do
+  # Pods for Startgun-tvOS
 
-  target 'ArivaaMobile-tvOSTests' do
+  target 'Startgun-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
