@@ -10,15 +10,21 @@ export async function play(audio) {
     return await new Promise(function (resolve) {
         const sound = new Sound(audios[audio], Sound.MAIN_BUNDLE, error => {
             if (error) {
+                console.log("Error while playing sound ",error);
+                resolve();
                 return;
             }
             sound.play(success => {
                 if (success) {
-                    sound.stop(() => {
-                        sound.release();
-                        resolve();
-                    });
+                   console.log("Audio Success",audio,success);
+                } else {
+                    console.log("Audio Error",audio,success);
                 }
+                resolve();
+                sound.stop(() => {
+                    sound.release();                    
+                });
+                
             });
         });
     });
