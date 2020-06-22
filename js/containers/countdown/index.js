@@ -41,8 +41,11 @@ const Main = (props) => {
       setMessage('On Your Marks');
     }
     interval = setInterval(() => {
+      if (progress >= 100) {
+        return
+      }
       setProgress((progress) => {
-        progress = progress + 100 / time;
+        progress = (progress + 100 / (time * 10));
         if (progress >= 100) {
           if (event === DISTANCE) {
             setMessage('On Your Marks');
@@ -64,7 +67,7 @@ const Main = (props) => {
         }
         return progress;
       });
-    }, 1000);
+    }, 100);
   };
   const onFinish = () => {
     setProgress(0);
