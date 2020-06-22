@@ -21,10 +21,10 @@ import close from '../../../assets/close.png'
 import { fields } from '../../utils/settings';
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
-import {getRandomTime} from '../../utils/common';
+import { getRandomTime } from '../../utils/common';
 const Main = props => {
-    const { ui, setValue,back } = props;
-    const {random}=ui;
+    const { ui, setValue, back } = props;
+    const { random } = ui;
     const [current, setCurrent] = useState(-1);
     return (
         <View style={[styles.settings]}>
@@ -69,6 +69,7 @@ const Main = props => {
                                                         value={ui[key]}
                                                         onValueChange={value => {
                                                             setValue(key, value);
+                                                            setValue('random', false);
                                                         }}
                                                         onSlidingComplete={() => {
                                                             setCurrent(-1);
@@ -77,11 +78,11 @@ const Main = props => {
                                                 </View> :
                                                 <TouchableHighlight underlayColor='transparent' onPress={() => {
                                                     setValue('random', !random);
-                                                    if(!random){
-                                                        setValue(key,getRandomTime());
+                                                    if (!random) {
+                                                        setValue(key, getRandomTime());
                                                     }
                                                 }}>
-                                                    <View style={[styles.button, random&&styles.yellowBtn]}>
+                                                    <View style={[styles.button, random && styles.yellowBtn]}>
                                                         <Text style={[styles.buttonText]}>Random</Text>
                                                     </View>
                                                 </TouchableHighlight>
@@ -98,7 +99,7 @@ const Main = props => {
                                                 const { title, image } = option;
                                                 return (
                                                     <TouchableHighlight underlayColor='transparent' key={index} onPress={() => {
-                                                        if(current!==-1){
+                                                        if (current !== -1) {
                                                             setCurrent(-1);
                                                         }
                                                         setValue(key, title);
@@ -124,7 +125,7 @@ const Main = props => {
                 </View>
             </View>
             <View style={[styles.footer]}>
-                
+
                 <Text style={[styles.copyright]}>© Startgun 2020</Text>
             </View>
         </View>

@@ -146,7 +146,7 @@ const Main = (props) => {
             {random ? (
               <Image source={hold} style={[styles.holdImg]} />
             ) : (
-              <Text style={[styles.timer]}>{time}s</Text>
+              <Text style={[styles.timer]}>{holdTime}s</Text>
             )}
           </View>
         </TouchableHighlight>
