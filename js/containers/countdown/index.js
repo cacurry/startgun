@@ -143,7 +143,7 @@ const Main = (props) => {
         <TouchableHighlight underlayColor="transparent" style={[styles.time]}>
           <View>
             <Text style={[styles.text]}>Hold Time</Text>
-            {random ? (
+            {random&&message!=='Go' ? (
               <Image source={hold} style={[styles.holdImg]} />
             ) : (
               <Text style={[styles.timer]}>{holdTime}s</Text>
