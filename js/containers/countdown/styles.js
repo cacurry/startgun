@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     progress: {
         alignItems: 'center',
-        paddingTop:60
+        paddingTop: 60
     },
     fill: {
         color: '#fff',
