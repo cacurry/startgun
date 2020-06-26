@@ -49,7 +49,7 @@ const Main = props => {
                     })}
                 >
                     <View style={[styles.values]}>
-                        <Text style={[styles.text]}>{time.toFixed(2)}</Text>
+                        <Text style={[styles.text]}>{time&&time.toFixed(2)}</Text>
                         <Text style={[styles.text]}>Tap to Change</Text>
                     </View>
                 </RNPickerSelect>

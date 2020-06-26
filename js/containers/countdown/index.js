@@ -149,7 +149,7 @@ const Main = (props) => {
                         {random&&message!=='Go' ? (
                             <Image source={hold} style={[styles.holdImg]} />
                         ) : (
-                            <Text style={[styles.timer]}>{holdTime.toFixed(2)}s</Text>
+                            <Text style={[styles.timer]}>{holdTime&&holdTime.toFixed(2)}s</Text>
                         )}
                     </View>
                 </TouchableHighlight>
