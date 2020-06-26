@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         width: '100%',
         zIndex: 2,
         alignItems: 'center',
-        top: Platform.OS === 'ios' ? 80 : 30
+        top: Platform.OS === 'ios' ? 80 : 30,
     },
     back: {
         position: 'absolute',
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     progress: {
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop:60
     },
     fill: {
         color: '#fff',
