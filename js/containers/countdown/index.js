@@ -51,7 +51,7 @@ const Main = (props) => {
             setMessage('On Your Marks');
           }
           if (event === SPRINTS) {
-            setMessage('Get Set');
+            setMessage('Set');
             timeout = delay(holdTime, () => {
               setMessage('Go');
               timeout = '';
@@ -101,7 +101,7 @@ const Main = (props) => {
         });
         break;
       }
-      case 'Get Set': {
+      case 'Set': {
         play('set');
         break;
       }
@@ -119,7 +119,7 @@ const Main = (props) => {
     case 'On Your Marks': {
       break;
     }
-    case 'Get Set': {
+    case 'Set': {
       source = set;
       break;
     }
@@ -149,7 +149,7 @@ const Main = (props) => {
             {random&&message!=='Go' ? (
               <Image source={hold} style={[styles.holdImg]} />
             ) : (
-              <Text style={[styles.timer]}>{holdTime}s</Text>
+              <Text style={[styles.timer]}>{holdTime.toFixed(2)}s</Text>
             )}
           </View>
         </TouchableHighlight>
