@@ -138,11 +138,11 @@ const Main = (props) => {
   return (
     <View style={[styles.countdown]}>
       <View style={[styles.content]}>
-        <View style={[styles.back]}>
+        {/*<View style={[styles.back]}>
           <TouchableHighlight underlayColor="transparent" onPress={back}>
             <Image source={backIcon} style={[styles.backIcon]} />
           </TouchableHighlight>
-        </View>
+        </View>*/}
         <TouchableHighlight underlayColor="transparent" style={[styles.time]}>
           <View>
             <Text style={[styles.text]}>Hold Time</Text>
