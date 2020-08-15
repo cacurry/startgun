@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         width: '100%',
         zIndex: 2,
         alignItems: 'center',
-        top: Platform.OS === 'ios' ? 80 : 30,
+        top: Platform.OS === 'ios' ? 40 : 30,
     },
     back: {
         position: 'absolute',
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#ced0d6',
-        fontSize: 18,
+        fontSize: 15,
         textTransform: 'uppercase',
     },
     timer: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     progress: {
         alignItems: 'center',
-        paddingTop: 60
+        paddingTop: 120
     },
     fill: {
         color: '#fff',
@@ -54,28 +54,33 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         textAlign: 'center'
     },
+    msg: {
+        fontSize: 35
+    },
     position: {
-        marginTop: -100
+        marginTop: -65
     },
     image: {
-        width: 130,
-        height: 130,
+        width: 100,
+        height: 100,
         resizeMode: 'contain'
     },
     button: {
         backgroundColor: '#666d79',
-        width: 180,
+        width: 108,
+        height: 27,
         paddingHorizontal: 20,
-        paddingVertical: 10,
+        paddingVertical: 4,
         borderRadius: 30,
         alignSelf: 'center',
         marginTop: 50
     },
     buttonText: {
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 14,
         textTransform: 'uppercase',
-        fontWeight: '500'
+        fontWeight: '500',
+        lineHeight: 20
     }
 
 })
