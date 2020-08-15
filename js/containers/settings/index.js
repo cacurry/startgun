@@ -68,7 +68,12 @@ const Main = props => {
                                                         minimumTrackTintColor={'#fff'}
                                                         maximumTrackTintColor={'#fff'}
                                                         thumbTintColor={'#706c4c'}
-                                                        thumbStyle={{borderWidth: 3, borderColor: '#f2c957'}}
+                                                        thumbStyle={{
+                                                            borderWidth: 2,
+                                                            borderColor: '#f2c957',
+                                                            width: 14,
+                                                            height: 14
+                                                        }}
                                                         value={ui[key]}
                                                         onValueChange={value => {
                                                             setValue(key, value)
@@ -78,6 +83,16 @@ const Main = props => {
                                                             setCurrent(-1)
                                                         }}
                                                     />
+                                                    <View style={[styles.ranges]}>
+                                                        <View>
+                                                            <Text style={[styles.time]}>0.5</Text>
+                                                            <Text style={[styles.unit]}>secs</Text>
+                                                        </View>
+                                                        <View>
+                                                            <Text style={[styles.time]}>2.0</Text>
+                                                            <Text style={[styles.unit]}>secs</Text>
+                                                        </View>
+                                                    </View>
                                                 </View> :
                                                 <TouchableHighlight underlayColor='transparent' onPress={() => {
                                                     setValue('random', !random)

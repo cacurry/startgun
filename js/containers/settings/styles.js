@@ -55,15 +55,18 @@ const styles = StyleSheet.create({
     },
     ranges: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: -12
     },
     time: {
         color: '#fff',
         fontSize: 15,
+        textAlign: 'center'
     },
     unit: {
         color: '#586372',
-        marginTop: -2
+        marginTop: -2,
+        fontSize: 12,
     },
     button: {
         borderWidth: 2,
