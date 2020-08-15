@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native'
+import randomIcon from '../../../assets/random.png'
 
 const styles = StyleSheet.create({
     content: {
@@ -13,24 +14,24 @@ const styles = StyleSheet.create({
         right: 20
     },
     closeIcon: {
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
         resizeMode: 'contain'
     },
     logo: {
         marginBottom: 20
     },
     welcome: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: 'bold',
         color: '#fff',
         textTransform: 'uppercase',
         marginBottom: 15
     },
     text: {
-        fontSize: 20,
+        fontSize: 18,
         color: '#fff',
-        marginBottom: 20
+        marginBottom: 40
     },
     actions: {},
     action: {
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
         marginBottom: 15
     },
     label: {
-        width: 80,
+        width: 85,
         fontSize: 15,
         fontWeight: 'bold',
         color: '#fff',
@@ -68,19 +69,28 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: '#fff',
         padding: 10,
-        width: 110,
-        height: 50,
-        borderRadius: 10,
+        width: 90,
+        height: 40,
+        borderRadius: 4,
         backgroundColor: '#525c6d',
+        flexDirection: 'row',
+        justifyContent: 'center'
     },
     buttonText: {
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 14,
         color: '#fff',
-        marginTop: Platform.OS === 'ios' ? 3 : 1
+        textTransform: 'capitalize',
+        /*marginTop: Platform.OS === 'ios' ? 3 : 1*/
     },
     icon: {
-        marginTop: -2
+        /*marginTop: -2*/
+        marginLeft: 2
+    },
+    randomIcon: {
+        resizeMode: 'contain',
+        marginLeft: 2,
+        marginBottom: -3
     },
     yellowBtn: {
         borderColor: '#f1c857',

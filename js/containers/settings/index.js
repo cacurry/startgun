@@ -18,42 +18,45 @@ import Slider from 'react-native-slider'
 import Setting from '../../../assets/setting.svg'
 import logo from '../../../assets/logo.png'
 import close from '../../../assets/close.png'
-import { fields } from '../../utils/settings';
-import { connect } from 'react-redux';
-import { ActionNames } from '../../redux/actions';
-import { getRandomTime } from '../../utils/common';
+import randomIcon from '../../../assets/random.png'
+import { fields } from '../../utils/settings'
+import { connect } from 'react-redux'
+import { ActionNames } from '../../redux/actions'
+import { getRandomTime } from '../../utils/common'
+
 const Main = props => {
-    const { ui, setValue, back } = props;
-    const { random } = ui;
-    const [current, setCurrent] = useState(-1);
+    const {ui, setValue, back} = props
+    const {random} = ui
+    const [current, setCurrent] = useState(-1)
     return (
         <View style={[styles.settings]}>
             <View style={[styles.content]}>
                 <TouchableHighlight underlayColor='transparent' onPress={back} style={[styles.close]}>
-                    <Image source={close} style={[styles.closeIcon]} />
+                    <Image source={close} style={[styles.closeIcon]}/>
                 </TouchableHighlight>
                 <View style={[styles.logo]}>
-                    <Image source={logo} />
+                    <Image source={logo}/>
                 </View>
                 <Text style={[styles.welcome]}>Welcome to Startgun!</Text>
-                <Text style={[styles.text]}>Startgun helps you train like pro.</Text>
+                <Text style={[styles.text]}>Startgun is an app made for people who love to run fast.</Text>
                 <View style={[styles.actions]}>
                     {
                         fields.map((field, index) => {
-                            const { title, key, type, min, max, options } = field;
+                            const {title, key, type, min, max, options} = field
                             if (type === 'slider') {
                                 return (
                                     <View style={[styles.action]} key={index}>
                                         <Text style={[styles.label]}>{title}</Text>
                                         <TouchableHighlight underlayColor='transparent' onPress={() => {
                                             if (current !== index) {
-                                                setCurrent(index);
+                                                setCurrent(index)
                                             } else {
-                                                setCurrent(-1);
+                                                setCurrent(-1)
                                             }
                                         }}>
                                             <View style={[styles.button]}>
-                                                <Text style={[styles.buttonText]}>{current === index ? ui[key].toFixed(2) : 'Set'}</Text>
+                                                <Text
+                                                    style={[styles.buttonText]}>{current === index ? ui[key].toFixed(2) : 'Set'}</Text>
                                             </View>
                                         </TouchableHighlight>
                                         {
@@ -65,25 +68,26 @@ const Main = props => {
                                                         minimumTrackTintColor={'#fff'}
                                                         maximumTrackTintColor={'#fff'}
                                                         thumbTintColor={'#706c4c'}
-                                                        thumbStyle={{ borderWidth: 3, borderColor: '#f2c957' }}
+                                                        thumbStyle={{borderWidth: 3, borderColor: '#f2c957'}}
                                                         value={ui[key]}
                                                         onValueChange={value => {
-                                                            setValue(key, value);
-                                                            setValue('random', false);
+                                                            setValue(key, value)
+                                                            setValue('random', false)
                                                         }}
                                                         onSlidingComplete={() => {
-                                                            setCurrent(-1);
+                                                            setCurrent(-1)
                                                         }}
                                                     />
                                                 </View> :
                                                 <TouchableHighlight underlayColor='transparent' onPress={() => {
-                                                    setValue('random', !random);
+                                                    setValue('random', !random)
                                                     if (!random) {
-                                                        setValue(key, getRandomTime());
+                                                        setValue(key, getRandomTime())
                                                     }
                                                 }}>
                                                     <View style={[styles.button, random && styles.yellowBtn]}>
                                                         <Text style={[styles.buttonText]}>Random</Text>
+                                                        <Image source={randomIcon} style={[styles.randomIcon]}/>
                                                     </View>
                                                 </TouchableHighlight>
                                         }
@@ -96,22 +100,23 @@ const Main = props => {
                                         <Text style={[styles.label]}>{title}</Text>
                                         {
                                             options.map((option, index) => {
-                                                const { title, image } = option;
+                                                const {title, image} = option
                                                 return (
-                                                    <TouchableHighlight underlayColor='transparent' key={index} onPress={() => {
-                                                        if (current !== -1) {
-                                                            setCurrent(-1);
-                                                        }
-                                                        setValue(key, title);
-                                                    }}>
-                                                        <View style={[styles.button, ui[key] === title && styles.yellowBtn]}>
-                                                            <Text style={[styles.buttonText]}>{title}
-                                                                {
-                                                                    image &&
-                                                                    <Image source={image}
-                                                                        style={[styles.icon]} />
-                                                                }
-                                                            </Text>
+                                                    <TouchableHighlight underlayColor='transparent' key={index}
+                                                                        onPress={() => {
+                                                                            if (current !== -1) {
+                                                                                setCurrent(-1)
+                                                                            }
+                                                                            setValue(key, title)
+                                                                        }}>
+                                                        <View
+                                                            style={[styles.button, ui[key] === title && styles.yellowBtn]}>
+                                                            <Text style={[styles.buttonText]}>{title}</Text>
+                                                            {
+                                                                image &&
+                                                                <Image source={image}
+                                                                       style={[styles.icon]}/>
+                                                            }
                                                         </View>
                                                     </TouchableHighlight>
                                                 )
@@ -131,7 +136,7 @@ const Main = props => {
         </View>
     )
 }
-const mapStateToProps = ({ ui }) => {
+const mapStateToProps = ({ui}) => {
     return {
         ui
     }
@@ -149,4 +154,4 @@ const bindAction = dispatch => {
         }
     }
 }
-export default connect(mapStateToProps, bindAction)(Main);
+export default connect(mapStateToProps, bindAction)(Main)
