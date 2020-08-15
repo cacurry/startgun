@@ -5,11 +5,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#09172f',
         height: Dimensions.get('window').height,
         justifyContent: 'center',
+        paddingTop: 100
     },
     startTrigger: {
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').width / 1.4,
-        alignSelf: 'center'
+        width: Dimensions.get('window').width - 10,
+        height: Dimensions.get('window').width / 1.4 - 10,
+        alignSelf: 'center',
     },
     values: {
         marginTop: 40
@@ -18,9 +19,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 15,
-        marginBottom: 10,
+        fontSize: 18,
+        marginBottom: 12,
         textTransform: 'uppercase'
+    },
+    small: {
+        fontSize: 10
     },
     footer: {
         width: '100%',
