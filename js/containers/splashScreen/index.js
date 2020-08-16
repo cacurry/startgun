@@ -9,7 +9,7 @@
 import React, { useEffect } from 'react'
 import styles from './styles'
 import { View } from 'react-native'
-import SplashSVG from '../../../assets/splash.svg'
+import SplashSVG from '../../../assets/splash-new.svg'
 import { connect } from 'react-redux';
 import { ActionNames } from '../../redux/actions';
 import { getData,clearData } from '../../utils/storage';
