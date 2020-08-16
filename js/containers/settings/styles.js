@@ -6,16 +6,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#09172f',
         height: Dimensions.get('window').height,
         justifyContent: 'center',
-        padding: 30
+        padding: 30,
+        paddingTop: 0,
+        paddingBottom: 50
     },
     close: {
         position: 'absolute',
-        top: Platform.OS === 'ios' ? 50 : 20,
+        top: Platform.OS === 'ios' ? 30 : 20,
         right: 20
     },
     closeIcon: {
-        width: 40,
-        height: 40,
+        width: 38,
+        height: 38,
         resizeMode: 'contain'
     },
     logo: {
@@ -40,18 +42,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 1,
         borderColor: '#5a616d',
-        paddingBottom: 15,
-        marginBottom: 15
+        paddingBottom: 13,
+        marginBottom: 13,
+        paddingRight: 8,
     },
     label: {
-        width: 85,
+        width: 95,
         fontSize: 15,
         fontWeight: 'bold',
         color: '#fff',
         textTransform: 'uppercase',
     },
     slider: {
-        width: 110
+        width: 90
     },
     ranges: {
         flexDirection: 'row',
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
     },
     button: {
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: '#fff',
         padding: 10,
         width: 90,
