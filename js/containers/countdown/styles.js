@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         width: '100%',
         zIndex: 2,
         alignItems: 'center',
-        top: Platform.OS === 'ios' ? 40 : 30,
+        top: Platform.OS === 'ios' ? 70 : 30,
     },
     back: {
         position: 'absolute',
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#ced0d6',
-        fontSize: 15,
+        fontSize: 14,
         textTransform: 'uppercase',
     },
     timer: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     progress: {
         alignItems: 'center',
-        paddingTop: 120
+        paddingTop: 180
     },
     fill: {
         color: '#fff',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         paddingVertical: 4,
         borderRadius: 30,
         alignSelf: 'center',
-        marginTop: 50
+        marginTop: 100
     },
     buttonText: {
         textAlign: 'center',
