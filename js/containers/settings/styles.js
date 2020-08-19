@@ -102,7 +102,8 @@ const styles = StyleSheet.create({
     randomIcon: {
         resizeMode: 'contain',
         marginLeft: 2,
-        marginBottom: -3
+        marginBottom: -3,
+        marginTop: Platform.OS === 'ios' ? 0 : 3,
     },
     yellowBtn: {
         borderColor: '#f1c857',
