@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         /*marginTop: Platform.OS === 'ios' ? 3 : 1*/
     },
     icon: {
-        /*marginTop: -2*/
+        marginTop: Platform.OS === 'ios' ? 0 : 1,
         marginLeft: 2
     },
     randomIcon: {
