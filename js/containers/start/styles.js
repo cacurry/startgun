@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     values: {
-        marginTop: 40
+        marginTop: 34
     },
     text: {
         textAlign: 'center',
-        color: '#fff',
+        color: '#e0e0df',
         fontWeight: 'bold',
         fontSize: 18,
         marginBottom: 12,
