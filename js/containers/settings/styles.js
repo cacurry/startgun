@@ -21,14 +21,14 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     logo: {
-        marginBottom: 20
+        marginBottom: 14
     },
     welcome: {
         fontSize: 22,
         fontWeight: 'bold',
         color: '#fff',
         textTransform: 'uppercase',
-        marginBottom: 15,
+        marginBottom: 20,
         fontFamily: 'Barlow-Regular',
     },
     text: {
@@ -46,10 +46,10 @@ const styles = StyleSheet.create({
         borderColor: '#5a616d',
         paddingBottom: 13,
         marginBottom: 13,
-        paddingRight: 8,
+        paddingRight: 28,
     },
     label: {
-        width: 90,
+        width: 75,
         fontSize: 14,
         fontWeight: 'bold',
         color: '#fff',
