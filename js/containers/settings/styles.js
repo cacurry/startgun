@@ -24,16 +24,18 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     welcome: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: 'bold',
         color: '#fff',
         textTransform: 'uppercase',
-        marginBottom: 15
+        marginBottom: 15,
+        fontFamily: 'Barlow-Regular',
     },
     text: {
         fontSize: 18,
         color: '#fff',
-        marginBottom: 40
+        marginBottom: 40,
+        fontFamily: 'Barlow-Regular',
     },
     actions: {},
     action: {
@@ -47,11 +49,12 @@ const styles = StyleSheet.create({
         paddingRight: 8,
     },
     label: {
-        width: 95,
-        fontSize: 15,
+        width: 90,
+        fontSize: 14,
         fontWeight: 'bold',
         color: '#fff',
         textTransform: 'uppercase',
+        fontFamily: 'Barlow-Regular',
     },
     slider: {
         width: 90
@@ -64,12 +67,14 @@ const styles = StyleSheet.create({
     time: {
         color: '#fff',
         fontSize: 15,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Barlow-Regular',
     },
     unit: {
         color: '#586372',
         marginTop: -2,
         fontSize: 12,
+        fontFamily: 'Barlow-Regular',
     },
     button: {
         borderWidth: 1,
@@ -87,6 +92,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#fff',
         textTransform: 'capitalize',
+        fontFamily: 'Barlow-Regular',
         /*marginTop: Platform.OS === 'ios' ? 3 : 1*/
     },
     icon: {
@@ -119,7 +125,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textTransform: 'uppercase',
         color: '#999',
-        marginTop: 8
+        marginTop: 8,
+        fontFamily: 'Barlow-Regular',
     }
 })
 

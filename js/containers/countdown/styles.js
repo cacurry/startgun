@@ -27,15 +27,17 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#ced0d6',
-        fontSize: 14,
+        fontSize: 13,
         textTransform: 'uppercase',
+        fontFamily: 'Barlow-Regular',
     },
     timer: {
         color: '#fff',
         fontSize: 18,
         textAlign: 'center',
         fontWeight: 'bold',
-        marginTop: 4
+        marginTop: 4,
+        fontFamily: 'Barlow-Regular',
     },
     holdImg: {
         width: 40,
@@ -55,7 +57,8 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     msg: {
-        fontSize: 35
+        fontSize: 36,
+        fontFamily: 'Barlow-Regular',
     },
     position: {
         marginTop: -65
@@ -77,10 +80,11 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         textAlign: 'center',
-        fontSize: 14,
+        fontSize: 12,
         textTransform: 'uppercase',
         fontWeight: '500',
-        lineHeight: 20
+        lineHeight: 18,
+        fontFamily: 'Barlow-Regular',
     }
 
 })

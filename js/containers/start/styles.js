@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         marginBottom: 12,
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        fontFamily: 'Barlow-Regular',
     },
     small: {
         fontSize: 10
