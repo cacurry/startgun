@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native';
+import { getRandomTime } from './common';
 const { setItem, getAllKeys, getItem,removeItem } = AsyncStorage;
 export async function saveData(obj) {
     await Promise.all(Object.keys(obj).map(async key => {
@@ -8,10 +9,11 @@ export async function saveData(obj) {
 export async function getData() {
     const keys = await getAllKeys();
     let obj = {
-        holdTime: 0.75,
+        holdTime: getRandomTime(),
         event: 'SPRINTS',
         sound: 'Voice',
-        time: 5
+        time: 5,
+        random : true
     };
     await Promise.all(keys.map(async key => {
         try {

@@ -38,7 +38,7 @@ const Main = props => {
                     <Image source={logo}/>
                 </View>
                 <Text style={[styles.welcome]}>Welcome to Startgun!</Text>
-                <Text style={[styles.text]}>Train like a pro.</Text>
+                <Text style={[styles.text]}>Startgun helps you train like a pro.</Text>
                 <View style={[styles.actions]}>
                     {
                         fields.map((field, index) => {
@@ -85,19 +85,19 @@ const Main = props => {
                                                     />
                                                     <View style={[styles.ranges]}>
                                                         <View>
-                                                            <Text style={[styles.time]}>0.5</Text>
+                                                            <Text style={[styles.time]}>1.5</Text>
                                                             <Text style={[styles.unit]}>secs</Text>
                                                         </View>
                                                         <View>
-                                                            <Text style={[styles.time]}>2.0</Text>
+                                                            <Text style={[styles.time]}>2.5</Text>
                                                             <Text style={[styles.unit]}>secs</Text>
                                                         </View>
                                                     </View>
                                                 </View> :
                                                 <TouchableHighlight underlayColor='transparent' onPress={() => {
                                                     setValue('random', !random)
-                                                    if (!random) {
-                                                        setValue(key, getRandomTime())
+                                                    if (random) {
+                                                        setValue('holdTime', getRandomTime())
                                                     }
                                                 }}>
                                                     <View style={[styles.button, random && styles.yellowBtn]}>

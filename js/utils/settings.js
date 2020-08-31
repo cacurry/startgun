@@ -5,8 +5,8 @@ export const fields = [
         title: 'HOLD TIME',
         key: 'holdTime',
         type: 'slider',
-        min: 0.5,
-        max: 2
+        min: 1.5,
+        max: 2.5
     }, {
         title: 'EVENT',
         key: 'event',
