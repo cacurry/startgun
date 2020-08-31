@@ -38,7 +38,7 @@ const Main = props => {
                     <Image source={logo}/>
                 </View>
                 <Text style={[styles.welcome]}>Welcome to Startgun!</Text>
-                <Text style={[styles.text]}>Startgun is an app made for people who love to run fast.</Text>
+                <Text style={[styles.text]}>Train like a pro.</Text>
                 <View style={[styles.actions]}>
                     {
                         fields.map((field, index) => {

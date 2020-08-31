@@ -8,37 +8,38 @@
 
 import React, { useEffect } from 'react'
 import styles from './styles'
-import { View } from 'react-native'
+import { View, Image } from 'react-native'
 import SplashSVG from '../../../assets/splash-new.svg'
-import { connect } from 'react-redux';
-import { ActionNames } from '../../redux/actions';
-import { getData,clearData } from '../../utils/storage';
+import splash from '../../../assets/splash-hex.png'
+import { connect } from 'react-redux'
+import { ActionNames } from '../../redux/actions'
+import { getData, clearData } from '../../utils/storage'
+
 const Main = props => {
-    const { setReducer, navigate } = props;
+    const {setReducer, navigate} = props
     const setData = async () => {
         //await clearData();
-        setReducer(await getData());
-        navigate('Start');
+        setReducer(await getData())
+        navigate('Start')
     }
     useEffect(() => {
-        setData();
-    }, []);
+        setData()
+    }, [])
     return (
         <View style={[styles.splash]}>
             <View style={[styles.content]}>
-                <SplashSVG
+                {/*<SplashSVG
                     preserveAspectRatio="xMidYMid slice"
                     width={'100%'}
                     height={'100%'}
-                />
+                />*/}
+                <Image source={splash} style={[styles.splashImage]}/>
             </View>
         </View>
     )
 }
-const mapStateToProps = ({ }) => {
-    return {
-
-    }
+const mapStateToProps = ({}) => {
+    return {}
 }
 const bindAction = dispatch => {
     return {
@@ -50,4 +51,4 @@ const bindAction = dispatch => {
         }
     }
 }
-export default connect(mapStateToProps, bindAction)(Main);
+export default connect(mapStateToProps, bindAction)(Main)
