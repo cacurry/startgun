@@ -70,8 +70,8 @@ const Main = (props) => {
     }, 100);
   };
   const onFinish = () => {
-    setProgress(0);
-    setMessage('');
+    // setProgress(0);
+    // setMessage('');
     setPolling(false);
   };
   const stopPolling = (isUnMount) => {
@@ -129,9 +129,19 @@ const Main = (props) => {
     }
   }
   const click = () => {
+    if(isPolling){
+      navigate('Start')
+      return;
+    } else {
+      if(progress !== 0 ){
+        navigate('Start')
+        return;
+      }
+    }
     if (timeout) {
       return;
     }
+   
     setPolling((polling) => !polling);
   };
   const remTime = time - (progress * time) / 100;
@@ -182,19 +192,9 @@ const Main = (props) => {
           onPress={click}
           style={[styles.button]}>
           <Text style={[styles.buttonText]}>
-            {isPolling ? 'Stop' : 'Start'}
+            {isPolling ? 'Stop' : (progress === 0 ? 'Start' : 'Reset' )}
           </Text>
         </TouchableHighlight>
-        {!isPolling && (
-          <TouchableHighlight
-            underlayColor="transparent"
-            onPress={()=>{
-                navigate("Start")
-            }}
-            style={[styles.button]}>
-            <Text style={[styles.buttonText]}>{'Reset'}</Text>
-          </TouchableHighlight>
-        )}
       </View>
     </View>
   );
