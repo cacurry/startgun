@@ -192,7 +192,7 @@ const Main = (props) => {
           onPress={click}
           style={[styles.button]}>
           <Text style={[styles.buttonText]}>
-            {isPolling ? 'Stop' : (progress === 0 ? 'Start' : 'Reset' )}
+            {isPolling ? 'Stop' : (message === 'Go' ? 'Reset' : (progress === 0 ? 'Start' : 'Stop') )}
           </Text>
         </TouchableHighlight>
       </View>
