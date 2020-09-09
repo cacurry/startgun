@@ -144,7 +144,7 @@ const Main = (props) => {
    
     setPolling((polling) => !polling);
   };
-  const remTime = time - (progress * time) / 100;
+  const remTime = time - parseInt((progress * time) / 100);
   return (
     <View style={[styles.countdown]}>
       <View style={[styles.content]}>
@@ -179,7 +179,7 @@ const Main = (props) => {
             lineCap={Platform.OS === 'ios' ? 'round' : 'butt'}>
             {() => (
               <Text style={[styles.fill, message ? styles.msg : styles.count]}>
-                {message || parseInt(remTime)}
+                {message || (remTime < 1 ? 1 : parseInt(remTime))}
               </Text>
             )}
           </AnimatedCircularProgress>

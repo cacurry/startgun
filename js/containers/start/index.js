@@ -40,6 +40,7 @@ const Main = props => {
                 </TouchableHighlight>
                 <RNPickerSelect
                     onValueChange={setTime}
+                    placeholder = {{}}
                     items={Array(10).fill().map((x, i) => {
                         const sec = i + 5
                         return {
