@@ -4,7 +4,40 @@
  *
  * @format
  * @flow strict-local
- */
+ */ 
+
+const seconds = [
+  { label: '1 second', value: 1 },
+  { label: '2 seconds', value: 2 },
+  { label: '3 seconds', value: 3 },
+  { label: '4 seconds', value: 4 },
+  { label: '5 seconds', value: 5 },
+  { label: '6 seconds', value: 6 },
+  { label: '7 seconds', value: 7 },
+  { label: '8 seconds', value: 8 },
+  { label: '9 seconds', value: 9 },
+  { label: '10 seconds', value: 10 },
+  { label: '11 seconds', value: 11 },
+  { label: '12 seconds', value: 12 },
+  { label: '13 seconds', value: 13 },
+  { label: '14 seconds', value: 14 },
+  { label: '15 seconds', value: 15 },
+  { label: '16 seconds', value: 16 },
+  { label: '17 seconds', value: 17 },
+  { label: '18 seconds', value: 18 },
+  { label: '19 seconds', value: 19 },
+  { label: '20 seconds', value: 20 },
+  { label: '21 seconds', value: 21 },
+  { label: '22 seconds', value: 22 },
+  { label: '23 seconds', value: 23 },
+  { label: '24 seconds', value: 24 },
+  { label: '25 seconds', value: 25 },
+  { label: '26 seconds', value: 26 },
+  { label: '27 seconds', value: 27 },
+  { label: '28 seconds', value: 28 },
+  { label: '29 seconds', value: 29 },
+  { label: '30 seconds', value: 30 },
+];
 
 import React from 'react'
 import styles from './styles'
@@ -41,13 +74,7 @@ const Main = props => {
                 <RNPickerSelect
                     onValueChange={setTime}
                     placeholder = {{}}
-                    items={Array(10).fill().map((x, i) => {
-                        const sec = i + 5
-                        return {
-                            label: sec + ' seconds',
-                            value: sec
-                        }
-                    })}
+                    items={seconds}
                 >
                     <View style={[styles.values]}>
                         <Text style={[styles.text]}>{time&&time.toFixed(2)}</Text>
